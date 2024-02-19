@@ -14,4 +14,7 @@ function enviarSaludoAPersona() {
     alert(`Hola ${message}`);
 }
 
-// Chongo, escribe una función que convierta de un texto a array
+
+function convertirTextoAArray(texto){
+    return texto.split(" ");
+}
