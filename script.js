@@ -6,7 +6,7 @@ function enviarSaludo(){
 }
 
 /**
- * Pedir el nombre de la persona usando promt()
+ * Pedir el nombre de la persona usando prompt()
  * Mostrar un saludo y nombre de la persona con alert()
  */
 function enviarSaludoAPersona() {
