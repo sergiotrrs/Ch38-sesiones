@@ -13,3 +13,5 @@ function enviarSaludoAPersona() {
     let message = prompt("Hola usuario dime tu nombre");
     alert(`Hola ${message}`);
 }
+
+// Chongo, escribe una función que convierta de un texto a array
