@@ -1,15 +1,14 @@
-console.log("Hola Ch38");
-
-// Función que envie un saludo con alert.
-function enviarSaludo(){
-    alert('¡Hola Ch38!');
+function enviarSaludoConAlerta() {
+    let nombre = prompt("Por favor, introduce tu nombre:");
+    if (nombre) { 
+        alert("¡Hola, " + nombre + "! Bienvenido."); 
+    } else {
+        alert("No se introdujo ningún nombre. ¡Hola desconocido!"); 
+    }
 }
-
-/**
- * Pedir el nombre de la persona usando prompt()
- * Mostrar un saludo y nombre de la persona con alert()
- */
-function enviarSaludoAPersona() {
-    let message = prompt("Hola usuario dime tu nombre");
-    alert(`Hola ${message}`);
-}
+function mostrarImagen(){
+    let imagen = document.getElementById("imagen");
+    let rutaImagen = "./carpeta_de_imagenes/imagen.jpg.jpg";
+    imagen.src = rutaImagen;
+    imagen.style.display = "block";
+} 
