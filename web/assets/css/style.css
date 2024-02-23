@@ -1,0 +1,23 @@
+* { /* Selector universal. Acá usado para resetear estilos por defecto*/
+    margin:0;
+    padding:0;
+}
+
+
+body{ /* Selector de tipo, elemento, etiqueta*/
+    background-color: cornflowerblue;
+}
+
+p, h1, h2{ /* Selecciona todos los elementos p, h1 y h2*/
+    color:burlywood;
+}
+
+section{
+    text-align: right;
+}
+
+.imagenes{
+    text-align: center;
+}
+
+

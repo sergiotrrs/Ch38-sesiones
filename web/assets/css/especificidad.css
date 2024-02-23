@@ -1,0 +1,76 @@
+*{ /* selector universal para resetear estilos */
+ margin: 0;
+ padding: 0;
+}
+
+h1{ /*Selector de elemento/tipo */
+    color: cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+    color: palevioletred;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    color: coral;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* En estas tres declaraciones, se aplica la característica de cascada de css, es decir, de arriba hacia abajo, aplicará los estilos del último bloque declarativo, es decir, lo de color coral y fuente arial*/
+
+/*Sin embargo, la cascada es el segundo método que aplica css, pues la especificidad será el de más peso.Cada selector tiene un valor diferente y el selector con mayor especificidad es lo que mostrará los estilos
+
+*Puedes ir a checar la imagen valoresespecificidad.png en la carpeta img para que tengas un ejemplo visual de lo siguiente.
+
+De menor a mayor especificidad:
+
+Selectores de valor 0: * selector universal
+
+Selectores de valor 1: Elementos y pseudoelementos
+
+Selectores de valor 10: clases, atributos y pseudoclases
+
+Selectores de valor 100: ID.
+
+Selectores de valor 1000: Estilos en línea.
+
+!important - Se antepone a todo lo anterior. 
+
+*/
+
+.encabezado{ /*Especificidad de valor 10*/
+    color:cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*El ejemplo anterior, donde se usa la clase encabezado, ahora tiene mayor peso. Aquí ya no se tomará el parámetro de la cascada, sino el de valor de especificidad, por tanto, se aplicarán estos estilos.*/
+
+
+h1.encabezado{ /*Especificidad de valor 11, pues el selector de elemento tiene valor de 1 + la clase de valor 10, entonces 1+10=11*/
+    color: coral;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+#titulo{ /*Selector de id. Mayor especificidad, de valor 100*/
+    color: purple;
+}
+
+#titulo{
+    color:palevioletred;
+}
+
+/*En caso de tener dos elementos con igual especificidad, por ejemplo estas dos declaraciones con el id "titulo", vuelvea entrar en juego el parámetro de la cascada, es decir, se tomarán los estilos de lo último que se declaró.*/
+
+/*Para revisar un ejemplo con la mayor especificidad, la de valor 1000, revisa el html, a partir de la línea 15*/
+
+h1{ /*Selector de etiqueta, pero con !important*/
+    color: red !important; /*Mala práctica*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*Con !important dejamos de lado la cascada y la especificidad. No es una práctica recomendada y es mejor evitarla. */
+
+
