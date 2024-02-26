@@ -12,12 +12,25 @@ p, h1, h2{ /* Selecciona todos los elementos p, h1 y h2*/
     color:burlywood;
 }
 
-section{
-    text-align: right;
-}
 
 .imagenes{
     text-align: center;
 }
 
+table{ 
+    border: 4px solid darkred; /* Width, style, color del borde*/
+    border-spacing: 15px; /*Espaciado entre celdas*/
+    /*border-collapse: collapse;*/
+}
 
+th, td{
+    border: 2px dashed red;
+    background-color: palevioletred;
+}
+
+td{
+    background-color: coral;
+    text-align: center;
+}
+
+table th 
