@@ -1,0 +1,65 @@
+*{/* Resetear estilos que vienen por default en el navegador */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{ /* Declaramos variables para reutilizar los colores */
+    --color_texto:#5c3d5b;
+    --color_elementos_fieldset:#4d3e6b;
+    --color_fieldset_boton:#f07360;
+}
+
+header{
+    display: flex; /* Visualización en un contenedor flexible */
+    justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del contenedor */
+    padding:10px;
+}
+
+#logo{
+    width: 80px; 
+    height: auto; /* En automático mantiene la proporción */
+    margin: 20px 25px 20px 15px;/* Top, right, bottom, left */
+}
+
+nav>ul{
+    list-style-type:none; /* Se eliminan los marcadores de lista */
+    display: flex;
+}
+
+/* Elementos de la barra de navegación */
+.elementos-navegacion{
+    margin: 20px 50px;
+    font-size: 1.3em; /* Unidad relativa, sugerida para las fuentes */
+    font-family: "Arvo", serif; /* Fuente personalizada tomada de google fonts */
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Enlaces dentro de los elementos de la barra de navegación */
+.elementos-navegacion a{
+    text-decoration: none; /* Elimina el subrayado de la etiqueta a */
+    color: var(--color_texto); /* Cambiar el color con una variable */
+}
+
+.elementos-navegacion a:hover{ /* Uso de la pseudo-clase hover(al pasar el mouse) */
+    color:#f07360;
+    text-decoration: underline overline;
+}
+
+h1{
+    color:var(--color_texto);
+    text-align: center;
+}
+
+form{
+    margin: 0 auto;
+    width: 70%; /* Ocupa el 70% del contenedor principal*/
+    max-width: 800px; /* Ancho máximo */
+}
+
+
+
+
+
+
