@@ -56,7 +56,40 @@ form{
     margin: 0 auto;
     width: 70%; /* Ocupa el 70% del contenedor principal*/
     max-width: 800px; /* Ancho máximo */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
 }
+
+fieldset{
+    border-color: var(--color_fieldset_boton);
+    border-radius: 1.2em;
+    color: var(--color_elementos_fieldset);
+    margin: 20px;
+}
+
+legend{
+    text-align: left;
+    font-size: 1.6em;
+}
+
+/* Pseudoelemento */
+legend::first-letter{
+    color: var(--color_fieldset_boton); /* Establece el color de la primera letra utilizando la variable definida */
+}
+
+#datos-basicos,
+#datos-pedido,
+#datos-envio{
+    padding: 30px 50px;
+}
+
+#datos-basicos label,
+#datos-pedido label{
+    display: block; /* Hace que las etiquetas se muestren como elementos de bloque, así no utilizamos el br en html */
+}
+
 
 
 
