@@ -90,9 +90,49 @@ legend::first-letter{
     display: block; /* Hace que las etiquetas se muestren como elementos de bloque, así no utilizamos el br en html */
 }
 
+#datos-basicos input,
+#datos-pedido input{
+    border: 3px solid var(--color_elementos_fieldset);
+    width: 200px;
+    height: 30px;
+}
 
+/* Estilos a campos de entrada cuando estén focos */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus{
+    outline: none;
+    box-shadow: 5px 3px var(--color_elementos_fieldset);/* Agrega una sombra cuando se enfoca el campo */
+}
 
+#datos-pedido select[name="opciones-postre"]{
+    width: 200px;
+    height: 30px;
+    border: 3px solid var(--color_elementos_fieldset);
+}
 
+#datos-envio label{
+    display: inline-block;
+    padding: 2px;
+    margin:4px;
+}
 
+.terminos{
+    margin:20px;
+    color: var(--color_elementos_fieldset);
+    float:left;
+}
 
+button[type="submit"]{
+    width: 120px;
+    height: 20px;
+    float: right;
+    color: var(--color_elementos_fieldset);
+    background-color: var(--color_fieldset_boton);
+    border: 2px solid var(--color_elementos_fieldset);
+}
 
+button:active{
+    transform: scale(0.90); /* Reducir ligeramente el tañaño del botón cuando se active */
+}

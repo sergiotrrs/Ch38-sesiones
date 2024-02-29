@@ -45,7 +45,7 @@
 
                 
                 <label for="telefono">Número de teléfono:</label>
-                <input name="telefono" id="telefono"  required placeholder="552020626871">
+                <input name="telefono" id="telefono" type="tel" required placeholder="552020626871">
 
                 <!-- Es una mala práctica usar placeholder como nombre del dato que necesito que ingrese mi usuario <input type="text" placeholder="Nombre completo">-->
 
@@ -96,30 +96,13 @@
                 <input type="radio" id="opcion-envio3" name="opciones-envio">
                 <label for="opcion-envio3">Punto de entrega</label>
                 
-                
-
-                <input name="terminos-condiciones" id="terminos-condiciones" type="checkbox">
-                <label for="terminos-condiciones">Acepto términos y condiciones</label>
-                
-                
-
-                <!--Existe el input de tipo submit, que se renderiza como botón de envío, pero existe la etiqueta button, específica para esto-->
-                <button type="submit"> ¡Enviar ya! </button>
-                
-
             </fieldset>
 
-
-            <!-- Manera 1 de asociar la etiqueta label -->
-            <label for="nombre"> Nombre completo: <input name="nombre" id="nombre" type="text" placeholder="Blanca Pérez" required></label>
-
-            <!-- Manera 2 de asociar la etiqueta label -->
-            <label for="nombre"> Nombre completo:</label>
-            <input name="nombre" id="nombre" type="text" placeholder="Blanca Pérez" required>
-            <!-- El valor del id de input, debe ser igual al valor del for en label -->
-
-
-
+                <input name="terminos-condiciones" id="terminos-condiciones" type="checkbox">
+                <label for="terminos-condiciones" class="terminos">Acepto términos y condiciones</label>
+                
+                <!--Existe el input de tipo submit, que se renderiza como botón de envío, pero existe la etiqueta button, específica para esto-->
+                <button type="submit"> ¡Enviar ya! </button>
         </form>
     </main>
 </body>
