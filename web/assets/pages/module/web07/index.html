@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>CS07</title>
+    <script>
+        console.log("Me ejecuto dentro del HTML");
+        </script>    
+</head>
+<body>
+    <!-- Script interno -->
+    <script>
+        console.log("Me ejecuto dentro de body");
+    </script>
+    <!-- Script externo -->
+    <main>
+        <article>
+            <h1 class="title-article" onclick="handleTitle()" id="title">Sesión Web07</h1>
+            <p onclick="changeColor('#FA8072')" id="description">A esta cohorte le gustan los elotes</p>
+        
+        </article>
+        <article>
+            <h2 class="title-article">Historia del elote</h2>
+            <p onclick="changeColorTextUsingThis('#CCCCFF', this)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quas deserunt repellendus.</p>
+            <p onclick="changeColorTextUsingThis('yellow', this)"> <strong>Penny</strong> prefiere en vaso(esquite)</p>
+            <!-- Agregar un P con la preferencia de tu color y que esquite te gusta -->
+            <!-- Agregar un P con la preferencia de Serch color:#5D6D7E  y que esquite: amarillo completo-->
+            <p onclick="changeColorTextUsingThis('#5D6D7E', this)"><strong>Serch</strong> prefiere el color amarillo y le gusta el esquite</p>
+            <p onclick="changeColorTextUsingThis('violet', this)"><strong>Emmanuel</strong> Prefiere el color negro y le gusta comer elote o esquite no importa mientras sea maiz</p>
+            
+        </article>
+        <article>
+            <button onclick="changeColorUsingClass()">Cambiar color títulos</button>
+            <!-- buton que reinicie el color de los <p> a negro -->
+        </article>
+    </main>   
+    <!-- Aquí mero se recomienda --> 
+    <script src="./script.js"></script>
+</body>
+</html>

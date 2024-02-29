@@ -11,3 +11,11 @@ body {
 main {
     text-align: center;
 }
+
+#description {
+    color:brown;
+}
+
+p{
+    color:aqua;
+}
