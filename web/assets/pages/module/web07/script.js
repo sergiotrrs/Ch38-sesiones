@@ -29,4 +29,25 @@ function changeColorUsingClass(){
         console.log("Elemento modificado: " + collection[index].innerHTML);
         collection[index].style.color = "#9FE2BF";
     }
+
+    // lo anterior podemos sustituirlo invicando la sig. función
+    // changeColorOfCollection(collection, "black") ;
+}
+
+
+function resetColorsParagraph(){
+   // opción 1: ir a todos los paragraps y agreggarla una clase. Ej. class="paragraph-style"
+   // const collection = document.getElementsByClassName("title-article");
+   const collection = document.getElementsByTagName("p");
+   changeColorOfCollection(collection, "black") ;
+}
+
+function changeColorOfCollection( collection, color ){
+    console.log( collection );
+    console.log( collection.length ); 
+
+    for( index = 0; index < collection.length; index++ ){
+        console.log("Elemento modificado: " + collection[index].innerHTML);
+        collection[index].style.color = color;
+    }
 }
