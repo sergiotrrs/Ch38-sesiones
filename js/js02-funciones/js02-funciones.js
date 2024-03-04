@@ -135,14 +135,74 @@ sintaxis:
 
 
 
+/*
+ ------------ Funciones flecha -----------------------
+             (arrow functions)
+Funciones similares a las funciones expresadas pero:
+ - No requiere la palabra reservada function
+ - Si tiene una solo instrucción no requiere las llaves {}
+ - Si la instrucción es el mismo retorno, no requiere la palabra return
+
+sintaxis:
+    const nombreVariable = (parametros) => instrucción;
+
+    const nombreVariable = (parametros) => {
+        instrucción;
+        return expresión;
+    }
+*/
+
+// Función expresa  para calcular el área de un rectángulo.
+//const areaRectangulo= function(altura,base) {
+//    return altura * base;
+//}
+const areaRectangulo = (altura, base) => altura * base;
+
+console.log('El area del rectangulo es:', areaRectangulo(5,10)); // 50
+
+
+/*
+ ------------ Parámetros por defecto -----------------------
+             (default parameters)
+Inicializa un parámetro de la función, si no se envía el argumento cuando se invoca
+
+*/
+
+// crear un arrow function que calcule 
+// el área de un triángulo área= base * altura / 2;
+
+const areaTriangulo= (altura = 1, base = 1) => (altura*base)/2;
+
+console.log(`El area del triangulo es: ` + areaTriangulo(6,8)); // 24
+console.log(`El area del triangulo es: ` + areaTriangulo(3)); // 1.5
 
 
 
+/*
+ ------------ Parámetros rest -----------------------
+             (rest parameters)
+Permite representar una serie de valores indefinidos en los argumentos
+Esta serie de valores se presentan como un array.
+Rest parameters debe estar al final de la lista de parámetros.
 
+sintaxis:
+     ...nombreParametros
 
+*/
 
+const sumatoriaMultiplesNumeros = ( ...restParameter  ) => {
+    let suma= 0;
+    
+    for(let index = 0; index < restParameter.length; index++  ){
+        suma = suma + restParameter[index]; // suma += restaParameter[index]
+    }
 
+    return suma;
+}
 
+console.log(`sumatoria múltiple ${sumatoriaMultiplesNumeros(4,5)}`); // 9
+console.log(`sumatoria múltiple ${sumatoriaMultiplesNumeros(4,5,10,10)}`); // 29
+console.log(`sumatoria múltiple ${sumatoriaMultiplesNumeros(4,5,10,10,50,50)}`); // 129
 
 
 
