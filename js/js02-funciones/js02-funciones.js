@@ -1,0 +1,1 @@
+console.log("Sesión JS 02 - tipos de funciones");
