@@ -104,14 +104,14 @@ const datosSergh = {
     }
  };
 
- const datosDaniel = {
+ const datosEsquivel = {
     name: "Daniel",
     lastName: "Esquivel",
     age: 19,
     email: "esquivel@gmail.com",
     isActive: true,
     fullName:  function getFullName(){
-        return `${datosDaniel.name} ${datosDaniel.lastName}`;
+        return `${this.name} ${this.lastName}`;
     }
  };
 
@@ -119,7 +119,86 @@ const datosSergh = {
 
  // imprimir el nombre y nombre completo de Sergio y Daniel
  console.log(`Es nombre es: ${ datosSergh.name } y su nombre completo es ${ datosSergh.fullName() }`);
- console.log(`Es nombre es: ${ datosDaniel.name } y su nombre completo es ${ datosDaniel.fullName() }`);
+ console.log(`Es nombre es: ${ datosEsquivel.name } y su nombre completo es ${ datosEsquivel.fullName() }`);
 
  console.log(cancionesPreferidas);
  console.log(datosSergh);
+
+ console.table(cancionesPreferidas);
+ console.table(datosSergh);
+
+ // --------------------------------------------------------------
+ /*
+   Conversion explícita de datos (coerción de tipo)
+
+ */
+
+// Conversión a String =================================================
+const horaComida = 14.50;
+console.log("Hora comida " + horaComida ); // concatenación
+// conversión explícita
+const horaComidaText = String( horaComida );
+console.log("Hora comida " + horaComidaText ); 
+
+const colorVerde = 0x00913f ; // Representación hexadecimal, representación decimal 37183
+console.log(`El RGB del color verde es: ${ colorVerde }`); //  37183
+// Conversión explícita
+console.log(`El RGB del color verde es: ${ colorVerde.toString() }`); //  37183
+console.log(`El RGB del color verde es: ${ colorVerde.toString(16) }`); //  913f
+
+// padStart se utiliza para completar una cadena de texto 
+// desde el inicio con un conjunto especificado de caracteres 
+// hasta alcanzar una longitud deseada. 
+console.log(`El RGB del color verde es: #${ colorVerde.toString(16).padStart(6, "0") }`); //  #00913f
+
+
+// Conversión a number =================================================
+const costo = "100";
+const costoTotal = costo * 1.16; // 1001.16 - 116;
+console.log(`El costo total es ${costoTotal}`);
+
+const precioPapel = "150";
+const precioJabon = "90";
+const carritoCompra = precioJabon + precioPapel; // 90150
+console.log(`Carrito compra: ${carritoCompra}`);
+
+// conversión explícita
+const precioCroquetas = "1000.50";
+const nuevoCarrito = parseInt( precioJabon) + Number( precioPapel ) + parseFloat(precioCroquetas);
+console.log(`Nuevo carrito compra: ${nuevoCarrito}`); // 1240.50
+
+
+// Diferencias entre usar Number() y parseInt()
+// - Number convierte enteros y decimales
+// - parseInt convierte solo la parte entera
+console.log( parseInt("10.456")); // 10
+// - Number devuelve NaN si la cadena contiene algún caracter no numérico
+// - parseInt convierte los enteros hasta encontrar una caracter no numérico
+//       Si la entrada no comienza con un valor numérico, devuelve NaN
+console.log( parseInt("10-25") ); // 10
+console.log( Number("10-25") ); // NaN
+
+console.log( Number( true ) ); // 1
+console.log( Number( false ) ); // 0
+console.log( parseInt( true ) ); // NaN
+
+// Conversión a booleano
+// En la conversión de boolean los siguientes valores son false:
+// "", 0, null, undefined
+console.log( Boolean(1) ); //true
+console.log( Boolean(1000) ); //true
+console.log( Boolean(-1000) ); //true
+console.log( Boolean("Ya mero nos vamos a comer, me duele la cabeza") ); // true
+console.log( Boolean("") ); // false
+console.log( Boolean(" ") ); // true por que hay un espacio
+
+// Number
+// [] -> 0 , [30] -> 30, [30,33] -> NaN, false -> 0, true -> 1
+
+// String
+// [] -> "" , [12,2] -> "12,2", function(){} -> "funtion(){}", {} -> [object, object]
+
+console.log( String( {name:"sergio"} ) ); // [object, object]
+console.log( String( {name:"sergio", lastName:"Torres"} ) ); // [object, object]
+// Conversión de un Objeto a JSON.
+console.log( JSON.stringify( {name:"sergio", lastName:"Torres"} ) ); // {"name":"sergio","lastName":"Torres"}
