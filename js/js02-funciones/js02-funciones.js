@@ -117,3 +117,38 @@ console.log( numbers ); // [1,2,3,4];
 let cloneNumbers = myArray.slice();
 myArray.push(5);  // [1,2,3,4,5];
 console.log( cloneNumbers ); // // [1,2,3,4];
+
+
+/*
+ ------------ Funciones autoinvocadas -----------------------
+             (selft-invoking functions)
+Funciones que se autoinvocan, se pueden definir con funciones anónimas.
+
+sintaxis:
+   ( function (parámetros ){} )( argumentos );
+
+*/
+
+(function myName( name ){
+    console.log("my name is " + name );
+})("Sergh");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
