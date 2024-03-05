@@ -38,11 +38,17 @@ console.log("Sesion JS03 condicionales");
 
 */
 
-const temperatura = 25;
+const temperatura = 40;
 let mensaje = "";
 
 if( temperatura === 22 ){
-    mensaje = `Temperatura de ${temperatura} es ideal`;
+  mensaje = `Temperatura de ${temperatura} es ideal`;
+} else if (temperatura >= 15 && temperatura <= 21) {
+  mensaje = `Temperatura de ${temperatura} grados es fría.`;
+} else if (temperatura >= 23 && temperatura <= 30) {
+  mensaje = `Temperatura de ${temperatura} grados es calurosa.`;
+} else {
+  mensaje = `Temperatura de ${temperatura} grados no se clasifica como fría ni calurosa.`;
 }
 
-console.log( mensaje ); // ""
+console.log( mensaje ); 
