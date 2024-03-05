@@ -258,4 +258,6 @@ const imprimirMensajeConCallbacks = ( fncCallBackImprime, mensaje  ) => fncCallB
 // Invocando la función y enviando como argumento una función de callback
 imprimirMensajeConCallbacks( imprimirEnConsola  , "Hola, ya merito nos vamos al primer descanso" );
 imprimirMensajeConCallbacks( imprimirEnParagraph  , "Hola, ya merito nos vamos al primer descanso" );
+imprimirMensajeConCallbacks( function(mensaje){ console.log(mensaje)}  , "Hola, ya merito nos vamos al primer descanso" );
+imprimirMensajeConCallbacks( mensaje => console.log(mensaje)  , "Hola, ya merito nos vamos al primer descanso" );
 
