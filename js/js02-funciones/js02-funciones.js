@@ -271,5 +271,27 @@ console.log(  nombres.sort() ); // ['Andrés', 'Donaji', 'Emma', 'Erick', 'Kris'
 const frutas = ["Manzana", "zarzamora", "Pera", "fresa"]; // [Manzana, Pera, fresa, zarzamora]
 console.log( frutas.sort() ); // ['Manzana', 'Pera', 'fresa', 'zarzamora']
 
-const numeros = [ 5, 100, 3, 20 ]; // 100, 20, 3, 5
-console.log( numeros.sort() );
+const numeros = [ 5, 100, 3, 20 ]; 
+console.log( numeros.sort() ); // 100, 20, 3, 5
+
+function comparacion( a, b ){
+    if( a < b ){
+        return -1;        
+    } else if( a > b ) { 
+        return 1; // intercambia las posiciones
+    } else {
+        return 0;
+    } 
+}
+
+function compare ( a, b){
+    return a-b;
+}
+console.log( numeros.sort( comparacion )); // [3, 5, 20, 100]
+console.log( [100, 20, 3, 5].sort( compare )); // [3, 5, 20, 100]
+
+const comparacionDesendente = (a,b) => b-a;
+console.log( [4,90,2,67].sort(  (a,b) => b - a) ); // orden descendente [ 90, 67, 4, 2]
+
+
+
