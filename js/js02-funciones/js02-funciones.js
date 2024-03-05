@@ -205,10 +205,57 @@ console.log(`sumatoria múltiple ${sumatoriaMultiplesNumeros(4,5,10,10)}`); // 2
 console.log(`sumatoria múltiple ${sumatoriaMultiplesNumeros(4,5,10,10,50,50)}`); // 129
 
 
+/*
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+ */
 
+/* function imprimerEnConsola ( mensaje){
+    console.log(mensaje);
+} */
 
+/**  imprimir en consola */
+const imprimirEnConsola =  mensaje => console.log(mensaje);
 
+/**  imprimir en alert */
+const imprimirConAlert = mensaje => alert(mensaje);
 
+/**
+ * Recibe un mensaje y lo imprime en un paragraph
+ * @param {string} mensaje para imprimir en el DOM
+ *
+ */
+const imprimirEnParagraph = mensaje => document.getElementById("message").innerHTML = mensaje  ;
+ 
+imprimirEnConsola("Hola Ch38, día de frutas y verduras");
+// imprimirConAlert("ahhhhhhhh");
+// imprimirEnParagraph("Tengo hambre");
 
+/**
+ *  Función que imprima en consola o alert o paragraph (solo una opción).
+ */
+function imprimirMensaje(opcion,mensaje){
+    if(opcion==="paragraph"){
+       imprimirEnParagraph(mensaje);
+    } else if (opcion==="alert"){
+    imprimeAlert(mensaje);
+    } else if(opcion==="consola"){
+        imprimirEnConsola(mensaje);
+    }else {
+        console.log("elige otra opcion");
+    }
+}
+imprimirMensaje( "opcion", "mensaje" );
+imprimirMensaje( "consola", "Hola" );
+// imprimirMensaje( "alert", "Hola" );
+imprimirMensaje( "paragraph", "Hola" );
 
+// implementando la anterior usando funciones de callback
+const imprimirMensajeConCallbacks = ( fncCallBackImprime, mensaje  ) => fncCallBackImprime( mensaje);
+
+// Invocando la función y enviando como argumento una función de callback
+imprimirMensajeConCallbacks( imprimirEnConsola  , "Hola, ya merito nos vamos al primer descanso" );
+imprimirMensajeConCallbacks( imprimirEnParagraph  , "Hola, ya merito nos vamos al primer descanso" );
 
