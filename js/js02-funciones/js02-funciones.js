@@ -384,3 +384,38 @@ console.log(`Resultado final: ${ factorialConRecursividad(5)}`); // 120
   Saludo 10
 
 */
+
+const saludarMultipleVeces = numeroSaludos => {
+    if(numeroSaludos>0){
+        console.log(`Saludo ${numeroSaludos}`); 
+        saludarMultipleVeces(numeroSaludos-1);
+    }
+}
+
+saludarMultipleVeces(5);
+
+const saludoRecursivo = ( numSaludo ) => {
+    if( numSaludo > 1 ){
+        saludoRecursivo( numSaludo - 1);
+        console.log( numSaludo );
+    } else {
+        // el numSaludo = 1
+        console.log( numSaludo );
+    }
+}
+saludoRecursivo(5);
+/*
+    parámetro   recursividad(n-1)   console.log
+    5                    4               5 
+    4                    3               4
+    3                    2               3
+    2                    1               2
+    1                   -----            1             
+
+*/
+
+// Refactorizando el saludo recursivo.
+const saludarRecursivamente = (numeroSaludos) => {
+	if (numeroSaludos > 1) saludarRecursivamente(numeroSaludos - 1);
+	console.log("Saludo " + numeroSaludos);
+}
