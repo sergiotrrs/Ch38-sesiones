@@ -160,11 +160,14 @@ const estacionAñoConIf = ( month ) => {
     }
     return estacion;
 }
-
+// Si mensaje = invierno -> H1, caso contrario -> H5
 const printMensaje = ( mensaje ) => {
+    const mensajeH1 = `<h1>${mensaje}</h1>`;
+    const mensajeH5 = `<h5>${mensaje}</h5>`;
+
     document.getElementById("message").innerHTML= `
     <div class="alert alert-success" role="alert">
-      <h3> ${mensaje} </h3>
+         ${ mensaje === "Invierno" ? mensajeH1: mensajeH5  }
     </div>
     `;
 }
@@ -176,4 +179,23 @@ const handleEstaciones = () => {
     printMensaje( mensaje );
 }
 
+// ------------------------ Operador ternario --------------------------
+/*
+ Es el único operador de JavaScript que tiene 3 operandos.
+ Generalmente se utiliza como opción a la sentencia if-else.
 
+ Sintaxis:
+  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
+
+*/
+
+const pagoTarjetaCredito = true;
+let msj;
+
+if ( pagoTarjetaCredito ){
+    msj = "A realizado el pago de su TC";
+}else {
+    msj = "No ha realizado el pago de su TC";
+}
+
+msj = pagoTarjetaCredito ? "A realizado el pago de su TC" : "No ha realizado el pago de su TC";
