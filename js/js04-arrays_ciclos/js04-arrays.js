@@ -43,6 +43,27 @@ console.log(nombre.indexOf("Cristian", 1 )); // 5
 // Crear una copia (clonarlo) de un arreglo
 const copyOfNames = nombre.slice();
 
+// Método para eliminar elementos de un arreglo. También es posible agregar elementos
+// splice() retorna los elementos eliminados
 
+// Eliminar a Sergh y a Emma
+// ['Cristian', 'Ara', 'Dan', 'Sergh', 'Emma', 'Cristian']
+// ['Sergh', 'Emma'] -> string: 'Sergh,Emma'
+console.log("Eliminado 2 elementos: " + nombre.splice(3, 2 ) ) // 'Sergh,Emma'
+console.log( nombre ); //  ['Cristian', 'Ara', 'Dan', 'Cristian']
 
+// Agregar después de Ara: Chongo, Penny
+console.log("Elementos eliminados: " , nombre.splice(2, 0, "Chongo", "Penny" ) );
+console.log( nombre );// ['Cristian', 'Ara', 'Chongo', 'Penny', 'Dan', 'Cristian']
 
+// Iterar un arreglo
+
+for (let i = 0; i < nombre.length; i++) {
+    const element = nombre[i];
+    console.log("Persona: " + element);    
+}
+
+// Iterar con ciclo for el arreglo de nombres
+// y agregar a cada nombre lo siguiente <li> ${nombrePersona} <li>
+// Crear un nuevo arreglo con cada elemento modificado
+// nuevoArreglo [ <li>N1</li>, <li>N2</li>, ...<li>Nn</li>];
