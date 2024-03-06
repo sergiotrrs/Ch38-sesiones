@@ -108,3 +108,24 @@ const productList = products.map(
     (product) => `<li class="list-group-item list-group-item-success"> ${product} </li>`  
     );
 document.getElementById("lista-productos").innerHTML = productList.join("");
+
+// Simplificaciones en la iteración de un arreglo
+
+// ----------------------- Uso de for... of ------------------
+/* Ejecuta una sentencia por cada elemento de un objeto iterable(array, colección, string).
+Sintaxis:
+    for (const iterator of object) {
+    
+    }
+*/
+const apellidos = ["Cortes", "Martinez", "Torres"];
+
+for (let index = 0; index < apellidos.length; index++) {
+    const element = apellidos[index];
+    console.log("Apellido: " + element );    
+}
+
+// for of
+for(const apellido of apellidos){
+    console.log("Apellido en forOf: " + apellido );
+}
