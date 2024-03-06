@@ -67,3 +67,18 @@ for (let i = 0; i < nombre.length; i++) {
 // y agregar a cada nombre lo siguiente <li> ${nombrePersona} <li>
 // Crear un nuevo arreglo con cada elemento modificado
 // nuevoArreglo [ <li>N1</li>, <li>N2</li>, ...<li>Nn</li>];
+const nombresEnLista = [];
+
+for (let i = 0; i < nombre.length; i++) {
+    const element = nombre[i];
+    // nombresEnLista.push("<li>" + element + "</li>");
+    nombresEnLista.push(`<li>${element}</li>`);
+}
+console.log(nombresEnLista); 
+// ['<li>Cristian</li>', '<li>Ara</li>', '<li>Chongo</li>'
+// , '<li>Penny</li>', '<li>Dan</li>', '<li>Cristian</li>']
+
+document.getElementById("lista-nombres").innerHTML = nombresEnLista.join("");
+// [2,3] -> string -> '2,3'
+// ['<li>Cristian</li>', '<li>Ara</li>'] -> string -> '<li>Cristian</li>,<li>Ara</li>'
+// ["hola", "Ch38"] -> 'hola Ch38" -> ["hola", "Ch38"].join(" ");
