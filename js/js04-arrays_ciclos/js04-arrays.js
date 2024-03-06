@@ -87,7 +87,8 @@ document.getElementById("lista-nombres").innerHTML = nombresEnLista.join("");
 // método map 
 
 // Esta función se va a llamar por cada elemento del arreglo que tiene el método map
-const myFncCallBack = ( element, index , array ) => `soy el indice ${index}`;
+const myFncCallBack = ( element, index , array ) =>
+     `soy el indice ${index}, valor ${element} del arreglo ${array}`;
 
 const numbers = [1,5,7]
 const duplicateOriginal = numbers.map( myFncCallBack );
@@ -96,3 +97,14 @@ const duplicate = numbers.map( element => element *2 );
 console.log( numbers );
 console.log( duplicateOriginal );
 console.log( duplicate );
+
+
+const products = ["Tostitos", "Tenis", "Chela", "Dulces"];
+// Generar un lista de cada productos 
+// <li class="list-group-item list-group-item-danger"> ${productName} </li>
+// usando el método map
+
+const productList = products.map( 
+    (product) => `<li class="list-group-item list-group-item-success"> ${product} </li>`  
+    );
+document.getElementById("lista-productos").innerHTML = productList.join("");
