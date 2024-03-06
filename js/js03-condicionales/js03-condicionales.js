@@ -119,8 +119,55 @@ console.log(`La velocidad del ventilador está en ${ setVelocidadVentilador(2)} 
 
 */
 
-const getInputValue = () => document.getElementById("user-input").value;
+const getInputValue = () => parseInt( document.getElementById("user-input").value );
 
 console.log("Entrada de usuario: " + getInputValue() );
 
-const handleEstaciones = () => console.log("Selección: " + getInputValue());
+const estacionAño = (mes) => {
+    
+    let estacion;
+    switch(mes){
+        case 12:
+        case 1:
+        case 2: 
+            estacion = "invierno";
+            break;
+        case 3:
+        case 4:
+        case 5:
+            estacion ="primavera";
+            break;
+        case 6:
+        case 7:
+        case 8:
+            estacion ="verano";
+            break;
+        case 9:
+        case 10:
+        case 11:
+            estacion ="otoño";
+            break;
+        default:
+            estacion= `el mes ${mes} no existe`;
+            break;
+    }
+    return estacion;
+}
+
+const printMensaje = ( mensaje ) => {
+    document.getElementById("message").innerHTML= `
+    <div class="alert alert-success" role="alert">
+      <h3> ${mensaje} </h3>
+    </div>
+    `;
+}
+
+
+const handleEstaciones = () => {
+    const mes = getInputValue();
+    console.log("Selección: " + mes);
+    const mensaje = estacionAño(mes);
+    printMensaje( mensaje );
+}
+
+
