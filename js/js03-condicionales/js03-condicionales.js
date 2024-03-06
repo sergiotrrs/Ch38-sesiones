@@ -123,33 +123,40 @@ const getInputValue = () => parseInt( document.getElementById("user-input").valu
 
 console.log("Entrada de usuario: " + getInputValue() );
 
-const estacionAño = (mes) => {
-    
+const estacionAño = (mes) => {    
     let estacion;
     switch(mes){
-        case 12:
-        case 1:
-        case 2: 
+        case 12: case 1: case 2: 
             estacion = "invierno";
             break;
-        case 3:
-        case 4:
-        case 5:
+        case 3: case 4: case 5:
             estacion ="primavera";
             break;
-        case 6:
-        case 7:
-        case 8:
+        case 6: case 7: case 8:
             estacion ="verano";
             break;
-        case 9:
-        case 10:
-        case 11:
+        case 9: case 10: case 11:
             estacion ="otoño";
             break;
         default:
             estacion= `el mes ${mes} no existe`;
             break;
+    }
+    return estacion;
+}
+
+const estacionAñoConIf = ( month ) => {
+    let estacion;
+    if (month == 12 || month == 1 || month == 2 ) {
+        estacion = "Invierno";
+    } else if (month == 3 || month == 4 || month == 5 ) {
+        estacion = "Primavera";
+    } else if (month == 6 || month == 7 || month == 8 ) {
+        estacion = "Verano";
+    } else if (month == 9 || month == 10 || month == 11 ) {
+        estacion = "Otoño";
+    } else {
+        estacion = `el mes ${month} no existe`;
     }
     return estacion;
 }
@@ -162,11 +169,10 @@ const printMensaje = ( mensaje ) => {
     `;
 }
 
-
 const handleEstaciones = () => {
     const mes = getInputValue();
     console.log("Selección: " + mes);
-    const mensaje = estacionAño(mes);
+    const mensaje = estacionAñoConIf(mes);
     printMensaje( mensaje );
 }
 
