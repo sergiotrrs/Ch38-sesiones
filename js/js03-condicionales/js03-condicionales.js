@@ -52,3 +52,75 @@ if( temperatura === 22 ){
 }
 
 console.log( mensaje ); 
+
+
+//--------------- Condicional Switch --------------------------
+/*
+ La condicional Switch evalua una expresión y se compara
+ con el valor de cada instancia en 'case' y se ejecuta las
+ sentencias asociadas a ese 'case' hasta encontrar
+ la sentencia 'break' o se finalicen todas las sentencias
+ de la condicional switch.
+
+ Para comparar la condicional switch usa el operador estricto ===
+
+ Sintaxis:
+  switch (expresión) {
+    case valor1:
+        sentencia;
+        break;
+    case valor 2:
+        sentencias;
+        break;
+    case valor n:
+        sentencias;
+        break
+    default:
+        sentencias;
+        break;
+  }
+
+*/
+
+const setVelocidadVentilador = ( velocidad )  => {
+    let mensaje = "";
+    switch( velocidad ){
+        case 0:         
+            mensaje = "apagado";
+            break;
+        case 1:
+            mensaje = "Velocidad baja";
+            break;
+        case 2:
+            mensaje = "Velocidad media";
+            break;
+        case 3:
+            mensaje =  "Velocidad alta";
+            break;
+        default:
+            mensaje = "El nivel no existe";
+    }
+    return mensaje;
+}
+
+console.log(`La velocidad del ventilador está en ${ setVelocidadVentilador(2)} `); 
+
+// ------------------- Ejercicio Estaciones del año --------------------------
+/*
+ Preguntar por el número de mes (prompt o DOM), del 1 al 12
+ Desplegar de acuerdo al mes un Alert (mostrarlo en el DOM) la estación del año.
+
+ mes 12,  1,  2 = invierno.
+ mes  3,  4,  5 = primavera
+ mes  6,  7,  8 = verano
+ mes  9, 10, 11 = otoño 
+
+ Realizar una versión con if-else-elseif y otra con switch.
+
+*/
+
+const getInputValue = () => document.getElementById("user-input").value;
+
+console.log("Entrada de usuario: " + getInputValue() );
+
+const handleEstaciones = () => console.log("Selección: " + getInputValue());
