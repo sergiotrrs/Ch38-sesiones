@@ -72,7 +72,7 @@ const nombresEnLista = [];
 for (let i = 0; i < nombre.length; i++) {
     const element = nombre[i];
     // nombresEnLista.push("<li>" + element + "</li>");
-    nombresEnLista.push(`<li>${element}</li>`);
+    nombresEnLista.push(`<li class="list-group-item">${element}</li>`);
 }
 console.log(nombresEnLista); 
 // ['<li>Cristian</li>', '<li>Ara</li>', '<li>Chongo</li>'
@@ -82,3 +82,17 @@ document.getElementById("lista-nombres").innerHTML = nombresEnLista.join("");
 // [2,3] -> string -> '2,3'
 // ['<li>Cristian</li>', '<li>Ara</li>'] -> string -> '<li>Cristian</li>,<li>Ara</li>'
 // ["hola", "Ch38"] -> 'hola Ch38" -> ["hola", "Ch38"].join(" ");
+
+// Iterar el arreglo y generar un nuevo array.
+// método map 
+
+// Esta función se va a llamar por cada elemento del arreglo que tiene el método map
+const myFncCallBack = ( element, index , array ) => `soy el indice ${index}`;
+
+const numbers = [1,5,7]
+const duplicateOriginal = numbers.map( myFncCallBack );
+const duplicate = numbers.map( element => element *2 );
+
+console.log( numbers );
+console.log( duplicateOriginal );
+console.log( duplicate );
