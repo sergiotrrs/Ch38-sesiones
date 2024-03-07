@@ -129,3 +129,50 @@ for (let index = 0; index < apellidos.length; index++) {
 for(const apellido of apellidos){
     console.log("Apellido en forOf: " + apellido );
 }
+
+// ---------------- forEach -------------------------
+/*
+ Método que se utiliza para iterar colecciones, arreglos.
+ Permite ejecutar una función por cada elemento del arreglo.
+
+*/
+
+const automoviles = ["Mazda", "Tsuru", "Susuki", "Ferrari", "Supra",  "Honda" ];
+console.log( automoviles);
+// Método para establecerrevertir un arreglo
+ automoviles.reverse();
+// imprimir cada elemento de forma individual del arreglo revertido
+for (const auto of automoviles) {
+    console.log("auto: " + auto);
+}
+
+// Uso de for each.
+// automoviles.forEach()
+
+/* automoviles.reverse().forEach( function(element, index, array){
+    console.log(element);
+}); */
+
+automoviles.reverse().forEach(  auto => console.log(auto) );
+
+/*
+function funcParaForEach( element, index, array ){
+    const letraMayus = element.toUpperCase();
+    array[index] = letraMayus;
+}
+
+const letras = ["a", "b", "c"];
+for (let index = 0; index < letras.length; index++) {
+    funcParaForEach(letras[index], index, letras );    
+}
+*/
+
+const letras = ["a", "b", "c"];
+letras.forEach(  (letra, i, array) =>  array[i] = letra.toUpperCase() );
+
+console.log( letras );
+
+const letrasFinales = ["x", "y", "z"];
+const nuevoArrayLetrasFinales = letrasFinales.map( letra => letra.toUpperCase() );
+console.log(    nuevoArrayLetrasFinales     );
+console.log(    letrasFinales     );
