@@ -221,7 +221,7 @@ for( let i = 1; i <= 5; i++ ){
 // const cohortes = [ [], [], []  ];
 const equipos = [ 
     ["Charly"  , "Axel"  , "Joce"    , "Alan"  ,"Karen", "Donaji", "Aline", "Ryan"], // 404
-    ["Pedrito" , "Ari"   , "Esquivel", "Uli"   , "Penny", "Yetzel", "Eric", "Jesús"], // Java.lio
+    ["Pedrito" , "Ari"   , "Esquivel", "Uli"   , "Penny", "Yetzel", "Erick", "Jesús"], // Java.lio
     ["Erick"   , "Chongo", "Giss"    , "Andres", "Fernando", "Frida", "Victor", "Dan", "Bastian"]  // LoopLegion
 ];
 
@@ -239,3 +239,37 @@ console.log( equipos[2][2] ); // Giss
 
 // Imprimir cada nombre de personas de los equipos y detenerse por completo
 // cuando se encuentr el nombre de "Chongo"
+
+const iterarEquipos = (teams, nameToBreak) =>{
+
+    romperTabla:
+    for(const team of teams){ // teams [  team1[] , team2[] , team3[]  ]
+        console.log("Equipo " + team);
+        for(const name of team ){
+            console.log("Persona: " + name);
+            if( name.toLowerCase() === nameToBreak.toLowerCase() ) break romperTabla;
+        }
+    }
+}
+
+// iterarEquipos( equipos, "Chongo" );
+iterarEquipos( equipos, "erick" );
+
+console.log("===============Uso de continue================")
+
+/** 
+ * iterar todas las personas, pero no imprimir a hiddenName
+ * 
+ * */
+const usoDeContinue = (teams, hiddenName ) =>{
+    for(const team of teams){ 
+        console.log("Equipo " + team);
+        sigPersona:
+        for(const name of team ){
+            if( name === hiddenName ) continue sigPersona;
+            console.log("Persona: " + name);           
+        }
+    }
+}
+
+usoDeContinue(equipos, "Erick" );
