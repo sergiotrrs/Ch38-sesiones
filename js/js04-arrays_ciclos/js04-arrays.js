@@ -348,3 +348,24 @@ do{
 
 } while( confirm("Quieres otro num?")  );
 
+// Mostrar valores del 5 al 10 en consola
+// usando while y do-while
+const loopWhile = (start, end) => {
+    while(start <= end){
+        console.log("Num (while): " + start);
+        start++;
+    }
+}
+
+const loopDoWhile = (start, end) => {
+    do{
+        console.log("Num (do-while): " + start );
+        start++;
+    }while(start <= end);
+}
+
+loopWhile(5,10);
+loopDoWhile(5,10);
+
+let numeros=5
+
