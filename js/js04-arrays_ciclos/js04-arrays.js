@@ -176,3 +176,66 @@ const letrasFinales = ["x", "y", "z"];
 const nuevoArrayLetrasFinales = letrasFinales.map( letra => letra.toUpperCase() );
 console.log(    nuevoArrayLetrasFinales     );
 console.log(    letrasFinales     );
+
+// ------------------- Uso de break en ciclos ----------------------------
+// break no detiene la ejecución de la iteración en curso y termina el ciclo.
+
+// Realizar la tabla de multiplicar del 5
+// usando for loop
+
+// quiero detener la iteración cuando num = 6
+
+for (let num = 1; num <= 10; num++) {
+    let resultado = 5 * num;
+    console.log(`${num}x${5} = ${resultado}`);
+    if( num === 6) {
+        break;
+    }
+}
+
+// Realizar la tabla de multiplicar del 1 al 5, multiplicarlo por 1 al 10
+/*
+for( let i = 1; i <= 5; i++ ){
+    console.log(`valor de i: ${i}`);
+    for( let j = 1; j <= 10; j++ ){
+        // console.log(`valor de j: ${j}`);
+        console.log(`${i} * ${j} = ${ i * j}`);
+    }
+}*/
+
+// Uso de break en ciclos anidados.
+// Romper con las iteraciones cuando sea i=3 * j= 4 
+// ( No mostrar esa multiplicación, ni el resto)
+
+holi: // uso de label
+for( let i = 1; i <= 5; i++ ){
+    console.log(`valor de i: ${i}`);
+    for( let j = 1; j <= 10; j++ ){     
+        if( i===3 &&  j===4  ) break holi;   
+        console.log(`${i} * ${j} = ${ i * j}`);
+    }
+
+}
+
+// Iteración de matrices.
+// const cohortes = [ [], [], []  ];
+const equipos = [ 
+    ["Charly"  , "Axel"  , "Joce"    , "Alan"  ,"Karen", "Donaji", "Aline", "Ryan"], // 404
+    ["Pedrito" , "Ari"   , "Esquivel", "Uli"   , "Penny", "Yetzel", "Eric", "Jesús"], // Java.lio
+    ["Erick"   , "Chongo", "Giss"    , "Andres", "Fernando", "Frida", "Victor", "Dan", "Bastian"]  // LoopLegion
+];
+
+const javaLio = equipos[1];
+console.log( javaLio ); //  ['Pedrito', 'Ari', 'Esquivel', 'Uli', 'Penny', 'Yetzel', 'Eric', 'Jesús']
+// Imprimir a Ari
+console.log(  javaLio[1] ); // Ari
+
+// Imprimir a Uli directamente de la variable equipos
+             //      F   C
+console.log( equipos[1][3] ); // Uli
+
+// Imprimir a Giss directamente de la variable equipos
+console.log( equipos[2][2] ); // Giss
+
+// Imprimir cada nombre de personas de los equipos y detenerse por completo
+// cuando se encuentr el nombre de "Chongo"
