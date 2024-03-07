@@ -273,3 +273,78 @@ const usoDeContinue = (teams, hiddenName ) =>{
 }
 
 usoDeContinue(equipos, "Erick" );
+
+
+// Escribe un programa que realice un conteo regresivo desde 10 hasta 1. Imprime cada número en la consola.
+for(let i=10; i >= 1; i--){
+    console.log(i);
+}
+
+
+ console.log( Math.random() ); // random() proporciona un número decimal entre el 0 y 1 (sin incluirlo).
+ console.log( Math.random() * 10 ); // Número aleatorio entre el 0 y 10(sin incluirlo)
+ console.log( parseInt(Math.random() * 10) ); // Número aleatorio entre el 0 y 10 sin decimales
+ 
+ console.log( Math.round(Math.random() * 10) ); // Número aleatorio entre el 0 y 10 sin decimales, que se incluya el 10
+
+ // Quiero número aleatórios del 10 al 20
+ // aplicamos un offset.
+ // "offset" se utiliza para referirse al desplazamiento o la posición de un elemento con respecto a otro
+ console.log(    Math.round(Math.random() * 10) +10 ); 
+
+ // Genera un arreglo de 100 números enteros comprendidos entre el 1 y 50.
+ const arreglo = [];
+
+ for (let i = 0; i < 100; i++) {
+     let numero = Math.floor(Math.random() * 50) + 1;
+     arreglo.push(numero);
+ }
+ 
+ console.log(arreglo);
+
+ const colors = ["blue", "yellow", "cian", "salmon", "black"];
+
+ // Escoger e imprimir de forma aleatoria un color del arreglo colors
+ console.log(colors [Math.round ( Math.random()* colors.length ) ]);
+
+
+
+// ============== Ciclo While ======================
+//                (while loop)
+/*
+ Crea un bucle que ejecuta una sentencia mientras la condición especificada
+ se cumpla.
+
+ Sintaxis:
+    while( condición) sentencia;
+
+    while ( condición ){
+        sentencias;
+    }
+
+*/
+
+/* while( confirm("¿Quieres que te genere tu num de la suerte?")   ){
+    alert("Tú número ganador es " + Math.round(Math.random()*100) );
+} */
+
+
+// ============== Ciclo Do-While ======================
+/*
+ Crea un bucle que ejecuta una sentencia mientras la condición especificada
+ se cumpla. La evaluación se realiza después de ejecutar la sentencia.
+ Por lo tanto, la sentencia se va a ejecutar por lo menos una vez.
+
+ Sintaxis:
+
+    do {
+        sentencias;
+    } while( condición );
+
+*/
+
+do{
+    alert("Tú número ganador es " + Math.round(Math.random()*100) );
+
+} while( confirm("Quieres otro num?")  );
+
