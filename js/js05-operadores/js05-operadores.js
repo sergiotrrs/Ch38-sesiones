@@ -140,3 +140,53 @@ for(  ; a < 3 ; b = ++a ){
 
 }
 console.log( a, b); // 3 , 3
+
+// ---------------- Operadores lógicos && y || ---------------
+/*
+ También son conocidos como operadores de corto circuito ( short-circuit operators ).
+
+ &&  : La evaluación se detiene tan pronto como se encuentra un operador falso.
+       Ya no se evalua el segundo operando y se retorna la expresión de OP1.
+ OP1 && OP2 Si OP1 es verdadero, se retorna la expresión de OP2.
+ OP1 || OP2 Si OP1 es verdadero, se retorna la expresión de OP1.
+
+*/
+
+const va = true;
+const vb = false;
+const vc = true;
+
+console.log( va || vb && vc  ); // true
+
+// Se consideran falsos: "", 0, null, undefined, NaN
+
+console.log(  va && "Por ti baby, seria batman"  ); // "Por ti baby, seria batman"
+console.log(  vb && "Bromeas, es un papucho"  ); // false
+console.log(  NaN && "ya merito?!"  ); // NaN
+console.log(  "false" && "ya merito?!"  ); // "ya merito?!
+console.log(  "" && "gracias a dios ya es viernes"  ); // ""
+console.log(  "Tu conoces a pimpon?" && ""  ); // ""
+console.log(  "Si se lava la carita!!" && "Mi lord, lo encontramos !!" ); //"Mi lord, lo encontramos !!"
+
+console.log(  "Listo Calixto" || ""  ); // "Listo Calixto"
+
+// console.log(  variableSinDeclarara  ); // variableSinDeclarara is not defined
+console.log( "Grúñeme" || variableSinDeclarar ); // "Grúñeme"
+console.log( " *sonríe en espejo* "); // 
+
+const gatoConBota = {
+    name: "Gato",
+    numVidas: 1,
+    color: "naranja",
+    image: ""
+};
+
+console.log( gatoConBota.pareja); // undefined
+
+if ( gatoConBota.pareja !== undefined ) console.log( gatoConBota.pareja);
+else console.log("El gato no tiene definida su pareja");
+
+gatoConBota.pareja && console.log( gatoConBota.pareja); // no imprime nada
+gatoConBota.color && console.log( gatoConBota.color); // "naranja"
+gatoConBota.image && console.log( gatoConBota.image); // no imprime nada
+
