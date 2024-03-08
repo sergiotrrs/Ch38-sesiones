@@ -178,7 +178,7 @@ const gatoConBota = {
     name: "Gato",
     numVidas: 1,
     color: "naranja",
-    image: ""
+    image: "https://hips.hearstapps.com/hmg-prod/images/shrek-1541581429.jpg"
 };
 
 console.log( gatoConBota.pareja); // undefined
@@ -188,5 +188,22 @@ else console.log("El gato no tiene definida su pareja");
 
 gatoConBota.pareja && console.log( gatoConBota.pareja); // no imprime nada
 gatoConBota.color && console.log( gatoConBota.color); // "naranja"
-gatoConBota.image && console.log( gatoConBota.image); // no imprime nada
+
+// Insertando imagen
+const insertImage = () => document.getElementById("gato-image").innerHTML = `
+            <img class="img-fluid" src="${gatoConBota.image}" alt="${gatoConBota.name}">
+            `;
+
+/*
+if ( gatoConBota.image !== undefined && gatoConBota.image != "" && 
+     gatoConBota.name !== undefined  && gatoConBota.name != ""
+   ){    
+    insertImage();
+} 
+*/
+//if ( gatoConBota.image && gatoConBota.name ) insertImage();
+
+gatoConBota.image && gatoConBota.name && insertImage();
+
+
 
