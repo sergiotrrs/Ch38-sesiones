@@ -46,3 +46,29 @@ const changeElementByQuerySelector = () => {
 };
 
 changeElementByQuerySelector();
+
+
+/** Crear nuevos elementos HTML */
+const newElement = () => {
+  // crear en memoria mi elemento
+  const newSection = document.createElement("section"); // <section>   </section>
+  newSection.innerHTML = `
+     <div class="row">
+      <div class="col-3 fondo-rosa"> col-3 </div>
+      <div class="col-9"> col-9 </div>
+     </div>
+  `;
+  const mainRef = document.querySelector("main"); // referencia del tag main
+
+  /*
+   Agrega un nodo al final de la lista de elementos secundarios 
+   de un nodo primario especificado. 
+   Si el hijo dado es una referencia a un nodo existente 
+   en el documento, appendChild() lo mueve de su posición actual 
+   a la nueva posición.
+  */
+  mainRef.appendChild(  newSection );
+
+};
+
+newElement();
