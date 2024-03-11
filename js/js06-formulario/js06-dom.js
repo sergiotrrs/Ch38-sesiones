@@ -29,13 +29,45 @@ register.addEventListener( "submit"  , ( e )=>{
      console.table( newUser );
 
     // Verificar los campos
-       // Si los campos son adecuados, enviar al servidor
-       // Si no son adecuados, enviar mensaje de error
+    if( isUserValid( newUser) ){
+        postUser( newUser); // Si los campos son adecuados, enviar al servidor
+    }              
 
 } );
 
+//** Verificar datos del nuevo usuario */
+const isUserValid = ( newUser ) =>{
+    let isValid = true;
+    const message = [];
+    if( newUser.password.length < 8  ){
+        isValid = false;
+        message.push("El password debe ser mayor a ocho caracteres");
+    }
+    if(! /[a-zA-Z0-9_-]/.test(newUser.password) ){
+        isValid = false;
+        message.push("El password debe solo letras y números");
+    }
+    // Validar que el correo electrónico su dominio sea .edu
 
+    if( ! isValid ) showUserError( message );
+    else showUserError( [] );
 
+    return isValid;
+} 
+
+const showUserError= (errorMessage)=>{
+    let alert = "";
+    for (let message of errorMessage ){
+        alert += `<li>${message}</li>`
+    }
+
+    document.getElementById("error-message").innerHTML= alert;
+}
+
+//** Enviar los datos al servidor */
+const postUser = ( newUser ) => {
+    // TODO enviar datos al servidor
+} 
 
 
 const handleButton = ( element, e ) =>{
