@@ -54,7 +54,7 @@ const newElement = () => {
   const newSection = document.createElement("section"); // <section>   </section>
   newSection.innerHTML = `
      <div class="row">
-      <div class="col-3 fondo-rosa"> col-3 </div>
+      <div class="col-3 fondo-rosa" id="columna-dinamica"> col-3 </div>
       <div class="col-9"> col-9 </div>
      </div>
   `;
@@ -72,3 +72,38 @@ const newElement = () => {
 };
 
 newElement();
+
+/** Cambiar el color de fuente y fondo de un elemento */
+const changeColor = () => {
+  const textToChangeColor = document.querySelector("#columna-dinamica");
+  console.log(textToChangeColor);
+  textToChangeColor.style.color = "cyan"; // cambio de color de la fuente
+  textToChangeColor.style.border = "thin solid red";
+};
+
+changeColor();
+
+
+// ------------------ Propiedades de visualización ---------------
+//                       Desaparecer el elemento
+// display : none (quitar el elemento del DOM)
+// visibility: hidden (ocultar el elemento)
+
+const displayNoneElement = () =>{
+  const div1 = document.querySelector("#div1");
+  div1.style.display = "none"; // quitar el elemento.
+}
+
+const hiddenElement = () => {
+  const div2 = document.querySelector("#div2");
+  div2.style.visibility = "hidden"; // ocultar el elemento
+}
+
+const resetElements = () => {
+  const div1 = document.querySelector("#div1");
+  div1.style.display = "block";
+
+  const div2 = document.querySelector("#div2");
+  div2.style.visibility = "visible";
+
+}

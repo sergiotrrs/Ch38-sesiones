@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="js06-styles.css">
     <title>Sesión JS06</title>
 </head>
-<body class="bg-dark text-light">
+<body >
     <header>
 
     </header>
@@ -18,7 +18,7 @@
         <!-- div.row#principal-row>div.col*3 -->
         <div class="row align-items-center justify-content-center" id="principal-row">
             <!-- logo -->
-            <div class="col-md-3 col-10">
+            <div class="col-md-3 col-10 d-none d-md-block">
                 <img class="img-fluid rounded" src="./assets/img/dino.jpg" alt="Dinosaurio rex patinando">
             </div>
             <!-- principal title -->
@@ -43,6 +43,20 @@
 
         <!-- Se va a agregar un section -->
     </main>
+    <section class="container text-center my-5">
+        <div class="row">
+            <div id="div1" class="col"> col 1</div>
+            <div id="div2" class="col"> col 2</div>
+            <div id="div3" class="col"> col 3</div>
+        </div>
+        <div class="row my-3">
+            <div class="col-7">
+                <button onclick="displayNoneElement()">Quitar</button>
+                <button onclick="hiddenElement()">Ocultar</button>
+                <button onclick="resetElements()">Reestablecer</button>
+            </div>
+        </div>
+    </section>
     <footer>
 
     </footer>
