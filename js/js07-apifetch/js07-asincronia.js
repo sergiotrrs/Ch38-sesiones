@@ -12,20 +12,20 @@ console.log("JS 07 asincronia");
 
 */
 
-const primerPaso = () =>{
+const primerPaso = () => {
   console.log("01 - Inicio de mi programa");
-}
+};
 
-const segundoPaso = () =>{
+const segundoPaso = () => {
   console.log("02 - Desarrollo de mi programa");
-  for(let i = 0 ; i < 1_000_000_000.1; i++ ){
-    i*2;
+  for (let i = 0; i < 1_000_000_000.1; i++) {
+    i * 2;
   }
-}
+};
 
-const tercerPaso = () =>{
+const tercerPaso = () => {
   console.log("03 - Fin de mi programa");
-}
+};
 
 /*
 primerPaso();
@@ -53,13 +53,13 @@ tercerPaso();
 
 */
 
-const saludoPersona = ( personName ) => console.log("hola" + personName);
+const saludoPersona = (personName) => console.log("hola" + personName);
 
-const pasoAsincrono = ( name ) => {
+const pasoAsincrono = (name) => {
   //setTimeout(  fncCallback, 3000  );
-   setTimeout( ()=>console.log(`Hola ${name}`)  , 3000  );
+  setTimeout(() => console.log(`Hola ${name}`), 3000);
   // setTimeout(  saludoPersona , 3000, name  );
-}
+};
 
 /*
 primerPaso(); // 01 - Inicio de mi programa
@@ -69,11 +69,15 @@ tercerPaso(); // 03 - finde mi programa
 
 // ------------------------- setInterval ------------------------
 // Ejecuta una función de manera reiterada con un tiempo de retardo fijo
-const pasoConIntervalo = ( name ) => {
+const pasoConIntervalo = (name) => {
   //setInterval( fncCallback, time_ms  );
-  setInterval( 
-    ()=> console.log(`Hola ${name} te saludo a las ${new Date().toLocaleString()}`) 
-    , 3000);
+  setInterval(
+    () =>
+      console.log(
+        `Hola ${name} te saludo a las ${new Date().toLocaleString()}`
+      ),
+    3000
+  );
 };
 
 /*
@@ -83,6 +87,27 @@ tercerPaso(); // 03 - finde mi programa
 */
 
 // Obtener las referencias de los botones
-
+const startInterval = document.getElementById("startInterval");
+const stoptInterval = document.getElementById("stopInterval");
+const resetInterval = document.getElementById("resetInterval");
+const dateH2 = document.getElementById("dateH2");
+let idInterval;
 
 // generar evento de click(addEventListener) de cada botón
+startInterval.addEventListener("click", () => {
+  console.log("Estoy en StartInterval");
+  // setInterval(funcCallBack, time_ms   );
+  idInterval = setInterval( ()=> dateH2.innerHTML = new Date().toLocaleString(), 1000 );
+  console.log(`ID del intervalo: ${idInterval}`);
+
+});
+
+stoptInterval.addEventListener("click", () => {
+  console.log("Estoy en StopInterval");
+  clearInterval(  idInterval   );// Detener el intervalo usando el ID
+});
+
+resetInterval.addEventListener("click", () => {
+  dateH2.innerHTML="-----";
+  console.log("Estoy en rsetInterval");
+});
