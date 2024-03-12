@@ -99,15 +99,31 @@ startInterval.addEventListener("click", () => {
   // setInterval(funcCallBack, time_ms   );
   idInterval = setInterval( ()=> dateH2.innerHTML = new Date().toLocaleString(), 1000 );
   console.log(`ID del intervalo: ${idInterval}`);
-
+  disableStartButton();
 });
 
 stoptInterval.addEventListener("click", () => {
   console.log("Estoy en StopInterval");
   clearInterval(  idInterval   );// Detener el intervalo usando el ID
+  enableStartButton();
 });
 
 resetInterval.addEventListener("click", () => {
   dateH2.innerHTML="-----";
   console.log("Estoy en rsetInterval");
 });
+
+const stateButtons = ( startButtonActive, stopButtonActive, resetButtonActive  ) =>{
+  startInterval.style.display = startButtonActive === true ? "inline": "none";
+  stoptInterval.style.display = stopButtonActive === true ? "inline": "none";
+  resetInterval.style.display = resetButtonActive === true ? "inline": "none";
+}
+
+const enableStartButton = () =>{
+   stateButtons(true, false, false);
+};
+
+const disableStartButton = () =>{
+  stateButtons(false, true, false);
+};
+enableStartButton();
