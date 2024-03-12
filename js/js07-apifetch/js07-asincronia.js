@@ -61,6 +61,28 @@ const pasoAsincrono = ( name ) => {
   // setTimeout(  saludoPersona , 3000, name  );
 }
 
+/*
 primerPaso(); // 01 - Inicio de mi programa
 pasoAsincrono("Andrés"); // Hola Andrés
 tercerPaso(); // 03 - finde mi programa
+*/
+
+// ------------------------- setInterval ------------------------
+// Ejecuta una función de manera reiterada con un tiempo de retardo fijo
+const pasoConIntervalo = ( name ) => {
+  //setInterval( fncCallback, time_ms  );
+  setInterval( 
+    ()=> console.log(`Hola ${name} te saludo a las ${new Date().toLocaleString()}`) 
+    , 3000);
+};
+
+/*
+primerPaso(); // 01 - Inicio de mi programa
+pasoConIntervalo("Ariana"); // Hola Ariana te saludo ... (cada 3 segundos se repite)
+tercerPaso(); // 03 - finde mi programa
+*/
+
+// Obtener las referencias de los botones
+
+
+// generar evento de click(addEventListener) de cada botón
