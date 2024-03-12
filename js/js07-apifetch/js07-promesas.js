@@ -50,7 +50,50 @@ pinkyPromise
 
 pinkyPromise
     .then( ( response )=> console.log("Respuesta resolve: " + response)  )
-    .catch( ( error )=> console.log("Respuesta error " + error.message) );
+    .catch( ( error )=> console.log("Respuesta error " + error.message, JSON.stringify(error) ) );
 
 
 console.log("Después de then y catch y pinkPromise");
+
+
+/*
+  Entrar a la catafixia
+  Nombres de personas que pueden participar y ganar
+  ["Giss", "Sergio", "Axel", "Nico", "Uli", "Ryan", "Joanna"]
+
+  Si tu nombre no está en el arreglo: "una espantosa X, siga participando Cuate"
+
+  Hacer que muestre si eres ganador o no, en tun tiempo de 5 segundos.
+
+*/
+
+/** promesa con argumentos */
+const catafixia = ( name ) => {
+    const personasGanadoras = ["Giss", "Sergio", "Axel", "Nico", "Uli", "Ryan", "Joanna"];
+   // const myPromise = new Promise( ()=>{}  );
+   const myPromise = new Promise( (resolve, reject )=>{
+        
+    if(  personasGanadoras.includes( name )  ){
+        resolve(`Felicidades ${name}, has ganado un juego de sala de muebles troncoso` );
+    } else {
+       // reject("Una espantosa X, siga participando Cuate");
+       setTimeout( ()=>reject("Una espantosa X, siga participando Cuate")  , 5000  );
+    }
+
+   } );
+
+   return myPromise;
+}
+
+catafixia("Sergio")
+    .then( response => console.log(response)  )
+    .catch( error => console.log(error));
+
+catafixia("Rodo")
+    .then( response => console.log(response)  )
+    .catch( error => console.log(error));
+
+
+
+
+
