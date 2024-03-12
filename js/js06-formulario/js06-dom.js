@@ -48,11 +48,15 @@ const isUserValid = ( newUser ) =>{
         message.push("El password debe solo letras y números");
     }
     // Validar que el correo electrónico su dominio sea .edu
+    if( !newUser.email.endsWith(".edu") ){
+        isValid = false;
+        message.push("Solo se acepta un email con dominio .edu");
+    }
 
     if( ! isValid ) showUserError( message );
     else showUserError( [] );
 
-    return isValid;
+    return isValid; // { isValid, message }
 } 
 
 const showUserError= (errorMessage)=>{
