@@ -44,9 +44,10 @@ getUsersUsingAsyncAwait("https://fakestoreapi.com/users");
 // https://reqres.in/api/users?page=1 // 1 al 6
 // https://reqres.in/api/users?page=2  // 7 al 12
 // usando then/catch o async/await
-
+                    // [ {last_name: "Lalo", email:".com"}, {}, {}   ]
 const generateCards= ( users ) => {
-    return users.map( user => `
+                              // [ "<div>...</div", "", "" ];
+    return users.map( user => `    
   <div class="col-12 col-md-4">
     <div class="card" >
         <div class="card-body">
@@ -58,19 +59,21 @@ const generateCards= ( users ) => {
   </div>
     `  );
 }
-
+              // [ "<div>...</div", "", "" ];
 const printCards = ( cards ) => document.getElementById("user-cards").innerHTML= cards.join("");
+                                                                        //  "<div>...</div" "" "" ;
 
 const getUsers = async(url) =>{
     const resolve = await fetch( url );
     const requestData = await resolve.json();
-    const user = requestData.data; // Obtener el arreglo de usuarios
-    printCards(  generateCards( user ) );
+    const users = requestData.data; // Obtener el arreglo de usuarios
+    // user = [ {email="",...} , {}, {}  ]
+    printCards(  generateCards( users ) );
 }
 
 const handleButton = () =>{
     // evaluaciones diversas
-    getUsers("https://reqres.in/api/users?page=2");
+    getUsers("https://reqres.in/api/users?page=1");
 }
 
 
