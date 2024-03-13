@@ -85,9 +85,24 @@ const postUser = async ( newUser ) => {
         const userCreated = await response.json();
         console.log( userCreated)
         alert("Usuario creado con éxito el " + userCreated.createdAt);
+        localStorage.setItem("userData", JSON.stringify( newUser ) ); // guardar nuevo dato en local storage
+        localStorage.setItem("fechaAlmacenamiento", new Date().toLocaleTimeString() );
+        localStorage.setItem("cohorte", 38 );
     }
 } 
 
+// Función autoinvocada
+( async function setUp(){
+    console.log("SetUp");
+    const userData = localStorage.getItem("userData"); // recuperar un valor del local storage
+    const user = JSON.parse( userData );
+    console.log( user );
+
+       register.elements["inputEmail"].value = user.email;
+       register.elements["inputPassword"].value = user.password;
+       register.elements["inputAddress"].value = user.address;
+       register.elements["gridCheck"].checked = user.checked;
+} )();
 
 const handleButton = ( element, e ) =>{
     /*
