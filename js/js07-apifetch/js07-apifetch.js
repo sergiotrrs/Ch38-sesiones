@@ -45,6 +45,34 @@ getUsersUsingAsyncAwait("https://fakestoreapi.com/users");
 // https://reqres.in/api/users?page=2  // 7 al 12
 // usando then/catch o async/await
 
+const generateCards= ( users ) => {
+    return users.map( user => `
+  <div class="col-12 col-md-4">
+    <div class="card" >
+        <div class="card-body">
+        <h5 class="card-title">${ user.first_name}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">${ user.email}</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+  </div>
+    `  );
+}
+
+const printCards = ( cards ) => document.getElementById("user-cards").innerHTML= cards.join("");
+
+const getUsers = async(url) =>{
+    const resolve = await fetch( url );
+    const requestData = await resolve.json();
+    const user = requestData.data; // Obtener el arreglo de usuarios
+    printCards(  generateCards( user ) );
+}
+
+const handleButton = () =>{
+    // evaluaciones diversas
+    getUsers("https://reqres.in/api/users?page=2");
+}
+
 
 
 /*
