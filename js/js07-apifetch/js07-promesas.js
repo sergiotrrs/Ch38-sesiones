@@ -48,6 +48,7 @@ pinkyPromise
     .finally( ()=> console.log("Ni modos, así es la vida") );
 */
 
+
 pinkyPromise
     .then( ( response )=> console.log("Respuesta resolve: " + response)  )
     .catch( ( error )=> console.log("Respuesta error " + error.message, JSON.stringify(error) ) );
@@ -85,14 +86,70 @@ const catafixia = ( name ) => {
    return myPromise;
 }
 
+const convertirAMayusculas = ( text) =>{       
+  return new Promise( (resolve, reject)=>{    
+    resolve( text.toUpperCase());
+  });
+}
+
+/*
 catafixia("Sergio")
-    .then( response => console.log(response)  )
+    .then( response => convertirAMayusculas(response) )
+    .then( ( textToMayus )=> console.log( textToMayus) )    
     .catch( error => console.log(error));
 
 catafixia("Rodo")
-    .then( response => console.log(response)  )
+    .then( response => convertirAMayusculas(response) )
+          .then( ( textToMayus )=> console.log( textToMayus) )  
     .catch( error => console.log(error));
 
+*/
+
+//---------------- manejar las promesas con async y await-------------
+/*
+ Async y Await facilita la escritura y lectura de código asíncrono.
+ Permite escribir código asíncrono de manera similar a cómo se escribiría
+ código síncrono.
+
+*/
+
+// async function realizaCatafixia(){}
+
+const realizaCatafixia = async ( name )=>{
+  
+  const textoGanador = await catafixia( name );
+  console.log( textoGanador );
+  const textoMayus = await convertirAMayusculas( textoGanador);
+  console.log( textoMayus );
+
+};
+
+const manejodeExcepciones = async ( name )=>{
+  /*
+    En JavaScript, try y catch son bloques utilizados para 
+    manejar errores. Permiten controlar el flujo de ejecución 
+    del código cuando ocurren excepciones, lo que ayuda a evitar 
+    que los errores detengan abruptamente el programa.
+
+    sintaxis:
+       try{
+
+       } catch( exception) {
+
+       }
+  */
+  try{
+    const textoGanador = await catafixia( name );
+    const textoMayus = await convertirAMayusculas( textoGanador);
+    console.log( textoMayus );
+
+  } catch( exception ){
+    console.error("Ay, nanita, ocurrió: " + exception);
+  }
+};
+
+realizaCatafixia("Sergio");
+manejodeExcepciones("Uriel");
 
 
 
