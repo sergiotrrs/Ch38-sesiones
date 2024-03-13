@@ -73,7 +73,8 @@ const getUsers = async(url) =>{
 
 const handleButton = () =>{
     // evaluaciones diversas
-    getUsers("https://reqres.in/api/users?page=1");
+    // getUsers("https://reqres.in/api/users?page=1");
+    getUsers("https://reqres.in/api/users?delay=3");
 }
 
 
