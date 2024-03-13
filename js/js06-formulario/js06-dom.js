@@ -69,8 +69,23 @@ const showUserError= (errorMessage)=>{
 }
 
 //** Enviar los datos al servidor */
-const postUser = ( newUser ) => {
+const postUser = async ( newUser ) => {
     // TODO enviar datos al servidor
+
+    const url = "https://reqres.in/api/users";
+    const options = {
+        method: "POST", // POST, PUT, DELETE, GET
+        header: { "Content-Type":"application/json" },
+        body:  JSON.stringify( newUser ) // conversión de Object a JSON
+    }
+
+    const response = await fetch( url, options  );
+    console.log( response )
+    if (response.status === 201){
+        const userCreated = await response.json();
+        console.log( userCreated)
+        alert("Usuario creado con éxito el " + userCreated.createdAt);
+    }
 } 
 
 
