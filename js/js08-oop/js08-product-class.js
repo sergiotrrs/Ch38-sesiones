@@ -57,9 +57,16 @@ export class ProductPremium extends Product {
         //  Acceder al constructor de Product para inicializarlo
         super(name, size)
         super.price = 15000;
+    
     }
 }
 
+class ProductsSuperUltraPremium extends ProductPremium {
+    constructor(){
+        super("UltaMega Premium", "SuperUltraXXL");
+        super.price = 50000;
+    }
+}
 
 const date = new Date(); // instanciar la clase Date(crear un objeto de tipo Date)
                         // al instanciar el objeto, se llama al método(función) constructor.

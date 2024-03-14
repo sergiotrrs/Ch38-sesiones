@@ -21,3 +21,5 @@ console.log( pastelVainilla.createdAt );
 
 const pastelBodas = new ProductPremium("Colosal","XXXL");
 console.log( pastelBodas.name, pastelBodas.price, pastelBodas.size);
+pastelBodas.size = "XXXXXXL";
+console.log( pastelBodas );
