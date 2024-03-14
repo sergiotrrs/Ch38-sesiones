@@ -1,4 +1,4 @@
-import {detallesUriel, detallesDamaris, sum, Product} from './js08-product-class.js';
+import {detallesUriel, detallesDamaris, sum, Product, ProductPremium} from './js08-product-class.js';
 
 console.log("JS 08 Programación orientada a objetos");
 console.log( detallesUriel );
@@ -16,5 +16,8 @@ pastelVainilla.price = 200;
 console.log( pastelVainilla.name, pastelVainilla.price, pastelVainilla.size ); // 200
 console.log( pastelVainilla.createdAt );
 
-// No se puede modificar, por que no tiene su método get
+// No se puede modificar, por que no tiene su método set
 // pastelVainilla.createdAt = 0;
+
+const pastelBodas = new ProductPremium("Colosal","XXXL");
+console.log( pastelBodas.name, pastelBodas.price, pastelBodas.size);

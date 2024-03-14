@@ -42,6 +42,23 @@ export class Product {
 
 }
 
+/**
+ * Herencia: mecanismo que permite a un objeto basarse en otro 
+ * objeto existente para heredar propiedades y métodos. 
+ * Esto permite la reutilización de código y la creación 
+ * de relaciones entre objetos, lo que facilita la 
+ * organización y la estructura del código.
+ * 
+ * Para heredar en la declaración de la clase se usa la palabra extends
+ */
+export class ProductPremium extends Product {
+   
+    constructor(name, size){
+        //  Acceder al constructor de Product para inicializarlo
+        super(name, size)
+        super.price = 15000;
+    }
+}
 
 
 const date = new Date(); // instanciar la clase Date(crear un objeto de tipo Date)
