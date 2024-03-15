@@ -1,0 +1,19 @@
+{
+  "name": "js09-npm",
+  "version": "0.0.1",
+  "description": "Prueba de NPM en Generation",
+  "main": "js08-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "luchaLibre",
+    "Dr.Serch"
+  ],
+  "author": "Sergio Torres",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
