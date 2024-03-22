@@ -246,8 +246,37 @@ public class HolaMundo {
 		// Eres de los 80's si naciste entre 1980 y 1989
 		// Eres de los 90's si naciste entre 1990 y 1999
 		// Eres de los 2000's si naciste entre 2000 y 2009
+		int anioNacimiento = 1994; // Escribe aquí tu año de nacimiento
+
+		if (anioNacimiento >= 1980 && anioNacimiento <= 1989) {
+		    System.out.println("Eres de los 80's");
+		} else if (anioNacimiento >= 1990 && anioNacimiento <= 1999) {
+		    System.out.println("Eres de los 90's");
+		} else if (anioNacimiento >= 2000 && anioNacimiento <= 2009) {
+		    System.out.println("Eres de los 2000's");
+		} else {
+		    System.out.println("Naciste fuera de los rangos 80's, 90's y 2000's");
+		}
 		
+		// ==================================================================
+	    // Operadores numéricos
+		int suma = 5 + 6 ; // 11
+		int opA = (int)5.2;
+		int opB = 6;
+		suma = opA + opB; // 11
+		int resta = opA - opB; // -1
 		
+		int multiplica = opA * (int)1.1; // 5
+		double multiplicaDouble = opA * 1.1; //5.5 
+		// Cuando realizas operaciones con dos datos de diferente tipo
+		// el resulto será con el tipo de dato mayor
+		//   int * double = double
+		System.out.println( multiplicaDouble ); // 5.5
+		
+		// int division = 3/0; // / by zero
+		
+		double divisionDouble = (double)opA / opB * 1;
+		System.out.println(divisionDouble);
 	}
 
 }
