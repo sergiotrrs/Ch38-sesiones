@@ -26,6 +26,22 @@ public class OperacionesMathTest {
 		System.out.println("numero 1: " + operacion.random());
 		System.out.println("numero 2: " + operacion.random());
 		
+		// imprimir valor con formato de moneda
+		operacion.printFormattedAmount( 34.5 ); 
+		operacion.printFormattedAmount( 5 ); 
+		operacion.printFormattedAmount( 1000 ); 
+		operacion.printFormattedAmount( 99.89 ); 
+		
+		// ====================================================================
+		// Antes de la sobrecarga
+		System.out.println( operacion.add( Double.parseDouble( "45")  , Double.parseDouble("32.89" )) );
+		// Después de la sobrecarga
+		// polimorfismo en tiempo de compilación.
+		System.out.println( operacion.add("45"  , "32.89"));
+		System.out.println( operacion.add( 45  , 32.89   ));
+		
+	
+		
 	}
 
 }

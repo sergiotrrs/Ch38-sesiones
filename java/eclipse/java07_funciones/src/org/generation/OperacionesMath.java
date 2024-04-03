@@ -45,6 +45,32 @@ public class OperacionesMath {
 		return result;
 	}
 	
+	/**
+	 *  Sobrecarga de métodos.
+	 *  Tener múltiples métodos con el mismo nombre, pero diferente lista de parámetros
+	 *  
+	 *  reglas:
+	 *   - El método debe tener el mismo nombre
+	 *   - Debe tener diferente orden en los tipos de parámdtros o
+	 *     números de parámetros
+	 *   - No se base en el tipo de retorno. Aunque pueda tener diferente
+	 *     tipo de retorno, se recomienda que sean de tipo compatible.
+	 *   - Puede tener diferentes modificadores de acceso
+	 *  
+	 *  
+	 * @param a operando 1
+	 * @param b operando 2
+	 * @return resultado de la sumatoria
+	 */
+	double add(String a, String b) {
+		double aDouble = Double.parseDouble(a);
+		double bDouble = Double.parseDouble(b);
+		double result = add( aDouble, bDouble);
+		return result;
+		
+		//return aDouble + bDouble;
+	}
+	
 	double subtract (double a, double b){
 	    return a - b;
 	}
@@ -60,5 +86,27 @@ public class OperacionesMath {
 		return randomInteger;		
 	}
 	
+	
+	void printFormattedAmount(double number ) {		
+		// System.out.println( "$" + number );
+		/*
+		 *  https://docs.oracle.com/javase/tutorial/java/data/numberformat.html
+		 *  
+		 *  String.format: Método estático de la clase String que
+		 *  permite formatear un texto de acuerdo al patrón especificado.
+		 *  
+		 *  Sintaxis: String.format( pattern, args );
+		 *  
+		 *  pattern: Texto que contiene expecificadores de formato que definen
+		 *  	como se mostrarán los argumentos proporcionados
+		 *  args: argumentos que se formatearán
+		 * 
+		 */
+		
+		String text = String.format("$%7.2f MXN. %n\tSin decimales $%04d MXN. " , number, (int)number);
+		System.out.println( text );
+		
+		// System.out.format(text, null);
+	}
 
 }
