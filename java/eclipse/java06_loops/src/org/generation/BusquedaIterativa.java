@@ -14,12 +14,13 @@ public class BusquedaIterativa {
 	 *      Respuesta: "Palabra no encontrada"  
 	 */
 	public static void main(String[] args) {
-		String phrase = "Pepe pecas pica".toLowerCase(); // 15
-		String wordToSearch = "pepe".toLowerCase(); // 5
+		String phrase = "Pepe Pecas Pica".toLowerCase(); // 15
+		String wordToSearch = "peca".toLowerCase(); // 5
 		int maxIndexToSearch = phrase.length() - wordToSearch.length(); // 10
 		boolean foundIt = false;
 
-		search: for (int i = 0; i <= maxIndexToSearch; i++) {
+		search: 
+		for (int i = 0; i <= maxIndexToSearch; i++) {
 			for (int j = 0; j < wordToSearch.length(); j++) {
 				if (phrase.charAt(i + j) != wordToSearch.charAt(j)) {
 					continue search;
