@@ -46,7 +46,7 @@ public class OperacionesMath {
 	}
 	
 	/**
-	 *  Sobrecarga de métodos.
+	 *  Sobrecarga de métodos. (Method overloading)
 	 *  Tener múltiples métodos con el mismo nombre, pero diferente lista de parámetros
 	 *  
 	 *  reglas:
@@ -70,6 +70,16 @@ public class OperacionesMath {
 		
 		//return aDouble + bDouble;
 	}
+	
+	// Crear dos sobrecargas más para add()
+	double add(String a, double b) {
+		return add( Double.parseDouble(a) , b);
+	}
+	
+	double add(double a, String b) {
+		return add( a , Double.parseDouble(b) );
+	}
+	
 	
 	double subtract (double a, double b){
 	    return a - b;

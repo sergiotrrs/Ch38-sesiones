@@ -39,6 +39,9 @@ public class OperacionesMathTest {
 		// polimorfismo en tiempo de compilación.
 		System.out.println( operacion.add("45"  , "32.89"));
 		System.out.println( operacion.add( 45  , 32.89   ));
+		// Permitir que se realice la sig. operación
+		System.out.println( operacion.add( "45"  , 32.89   ));
+		System.out.println( operacion.add( 45  , "32.89"   ));
 		
 	
 		
