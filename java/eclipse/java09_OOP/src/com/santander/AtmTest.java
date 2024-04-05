@@ -51,6 +51,11 @@ public class AtmTest {
 		System.out.println("Banco: " + Atm.bankName ); // Se recomienda acceder desde la clase
 		Atm.printBankName();
 		
+		// Un clase que contiene solo métodos estáticos, se conoce como unas clase de utileria
+		double pi = Math.PI; // atributo estático
+		double result = Math.sqrt(9); // método estático
+		
+		
 		
 	}
 	
