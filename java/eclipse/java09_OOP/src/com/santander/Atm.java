@@ -1,5 +1,8 @@
 package com.santander;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *  Clase: Una clase es una componente fundamental de la programación
  *  orientada a objeto(OOP: Object oriented Programming). 
@@ -33,7 +36,12 @@ public class Atm {
 	}
 	
 	void checkBalance() {
-		System.out.printf("Balance for %s (Serial Number %04d): $%,.2f%n", model, serialNumber, balance);
+		LocalDateTime now = LocalDateTime.now(); // feha y hora del sistema
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // formatear
+		String formatDateTime = now.format(format);
+		
+		System.out.printf("%s - Balance for %s (Serial Number %04d): $%,.2f%n", 
+				      formatDateTime,      model,        serialNumber,  balance);
 	}
 	
 	// métodos estáticos(static methods)
