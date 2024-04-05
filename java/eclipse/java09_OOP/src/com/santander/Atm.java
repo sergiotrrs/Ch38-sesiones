@@ -28,8 +28,11 @@ public class Atm {
 		return balance;
 	}
 	
+	double makeADeposit(double amount) {
+		balance += amount; 
+		return balance; 
+	}
 	
 	// métodos estáticos(static methods)
-	
 
 }
