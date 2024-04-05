@@ -3,6 +3,8 @@ package com.santander;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.print.attribute.standard.PrinterLocation;
+
 /**
  *  Clase: Una clase es una componente fundamental de la programación
  *  orientada a objeto(OOP: Object oriented Programming). 
@@ -20,7 +22,13 @@ public class Atm {
 	String model;
 	double balance;	
 	
-	// atributos de clase (static fields)
+	/* atributos de clase (static fields)
+	 Atributos que pertenecen a la clase. Esto significa que
+	 tendrá el mismo valor para todos los objetos.
+	 Estos atributos son útiles para mantener información común en todos
+	 los objetos. También, para propiedades donde no se requiere crear objetos.
+	*/
+	static String bankName = "BBVA";
 	
 	// métodos constructores
 	
@@ -45,4 +53,7 @@ public class Atm {
 	}
 	
 	// métodos estáticos(static methods)
+	static void printBankName() {
+		System.out.println("Bank Name: " +  bankName );
+	}
 }

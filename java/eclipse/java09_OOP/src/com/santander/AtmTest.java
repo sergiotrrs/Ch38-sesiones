@@ -34,6 +34,26 @@ public class AtmTest {
 		// Total balance in model: MODEL , serial number: SERIALNUMBER $BALANCE dollars
 		cajero01.checkBalance();
 		cajero02.checkBalance();
+		
+		// Asignar un valor a mi atributo estático
+		// Se recomienda usar los atributos estáticos
+		// directament en la clase
+		
+		System.out.println("Banco: " + cajero01.bankName ); // BBVA
+		System.out.println("Banco: " + cajero02.bankName ); // BBVA
+		System.out.println("Banco: " + Atm.bankName ); // BBVA
+		
+		Atm.bankName = "Santander";		
+		
+		// Imprimir el nombre del banco
+		System.out.println("Banco: " + cajero01.bankName ); // Santander
+		System.out.println("Banco: " + cajero02.bankName ); // Santander 
+		System.out.println("Banco: " + Atm.bankName ); // Se recomienda acceder desde la clase
+		Atm.printBankName();
+		
+		
 	}
+	
+	
 
 }
