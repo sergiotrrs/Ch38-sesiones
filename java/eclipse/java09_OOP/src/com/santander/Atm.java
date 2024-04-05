@@ -15,8 +15,7 @@ public class Atm {
 	// atributos de instancia (non-static fields)
 	int serialNumber;
 	String model;
-	double balance;
-	
+	double balance;	
 	
 	// atributos de clase (static fields)
 	
@@ -33,6 +32,9 @@ public class Atm {
 		return balance; 
 	}
 	
+	void checkBalance() {
+		System.out.printf("Balance for %s (Serial Number %04d): $%,.2f%n", model, serialNumber, balance);
+	}
+	
 	// métodos estáticos(static methods)
-
 }

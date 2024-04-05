@@ -23,13 +23,17 @@ public class AtmTest {
 		
 		cajero01.withdraw( 400_000 );
 		// imprimir cuanto dinero queda en cajero01
-		 System.out.printf("Total balance in cajero01: $%,3.2f dollars%n", cajero01.balance);
+		cajero01.checkBalance();
 		
 		// Crear el método makeADeposit() en Class Atm,
 		// y hacer un depósito de $500_000 en AtmTest en cajero01, imprimir el monto total
 		cajero01.makeADeposit(500_000);
-		System.out.printf("Total balance in cajero01: $%,3.2f dollars%n" , cajero01.balance);
-		 
+		cajero01.checkBalance();
+	
+		// Crear el método checkBalance() e imprimir el monto de cajero 01 y cajero 02
+		// Total balance in model: MODEL , serial number: SERIALNUMBER $BALANCE dollars
+		cajero01.checkBalance();
+		cajero02.checkBalance();
 	}
 
 }
