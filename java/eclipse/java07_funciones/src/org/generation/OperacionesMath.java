@@ -113,7 +113,7 @@ public class OperacionesMath {
 		 * 
 		 */
 		
-		String text = String.format("$%7.2f MXN. %n\tSin decimales $%04d MXN. " , number, (int)number);
+		String text = String.format("$%,7.2f MXN. %n\tSin decimales $%04d MXN. " , number, (int)number);
 		System.out.println( text );
 		
 		// System.out.format(text, null);

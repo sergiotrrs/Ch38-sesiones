@@ -75,6 +75,12 @@ public class ArrayListConceptos {
 			System.out.println(libro);
 		}
 		
+		// Reemplazar un elemento "Te hubieras ido antes"
+		nombresDeLibros.set(2, "Te hubieras ido antes");
+		System.out.println( nombresDeLibros );
+		
+		
+
 	}
 
 }
