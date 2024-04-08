@@ -133,7 +133,25 @@ public class Atm {
 	 *  
 	 *  No realizar la operación y enviar un mensaje
 	 */
-	
+	public Double deposit(double amount) {
+	    if (amount <= 0) {
+	        System.out.println("No se pueden relizar depositos menores a 1");
+	    }else {
+	            this.balance += amount;
+	            System.out.println("El saldo nuevo es: " + this.balance);
+	        }
+	    return this.balance;
+	}
+
+	public Double withdraw(double amount) {
+	    if ( amount <= 0 || amount > this.balance ) {
+	        System.out.println("No se pueden realizar retiros menores a 0 ni mayores que el saldo disponible");
+	    } else{
+	        this.balance -= amount;
+	        System.out.println("El saldo nuevo es: " + this.balance);
+	    }
+	    return this.balance;
+	}
 	
 	
 	

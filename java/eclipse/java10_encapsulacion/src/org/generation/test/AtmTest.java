@@ -34,6 +34,10 @@ public class AtmTest {
 		System.out.println( cajero01.showDetails()  );
 		
 		
+		System.out.println("Retiro de 50,000, queda: " + cajero01.withdraw(50000) );
+		System.out.println("Retiro de 1,000,000 , queda: " + cajero01.withdraw(1_000_000));
+		
+		
 		}
 
 }
