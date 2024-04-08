@@ -19,6 +19,15 @@ public class AtmTest {
 		Atm cajero02 = new Atm("T-1000", 500_000);
 		System.out.println("Num Serie cajero02: " + cajero02.getSerialNumber());
 		System.out.println(cajero02.getModel() + ": " + cajero02.getBalance());
-	}
+		
+		Atm cajero03 = new Atm("T-3000", 400_000);
+		System.out.println("Num Serie cajero03: " + cajero03.getSerialNumber());		
+		System.out.println(cajero03.getModel() + ": " + cajero03.getBalance());
+		
+		Atm cajero04 = new Atm("T-3500", "800000");		
+		
+		Atm cajero05 = Atm.createAirPortAtm();
+		
+		}
 
 }

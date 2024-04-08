@@ -29,6 +29,18 @@ public class Atm {
 	private double balance;
 	private String model;
 	
+	private static int counter; // llevará la contabilidad del num. de objetos
+	
+	// bloque de inicialización estático
+	static {
+		counter = 1000;
+	}
+	
+	// bloque de inicialización no-estático
+	{
+		System.out.println("Estoy creando el objeto ATM " + this.serialNumber);
+	}
+	
 	/* Métodos constructores
 	 *  Un constructor es un tipo especial de método que se llama automáticamente
 	 *  cuando se crea una instancia(objeto) de una clase. Su propósito principal
@@ -44,12 +56,42 @@ public class Atm {
 	 *  	proporciona un constructor por defecto sin parámetros.
 	 */
 	public Atm(){
-		
+		this.serialNumber = counter++ ;
 	}
 	
 	public Atm(String model, double balance){
+		this();
+		// this.serialNumber = counter++; Se está duplicando la responsabilidad 
 		this.model = model;
 		this.balance = balance;
+	}
+	
+	/* 
+	 * Realizar una sobrecarga para que funcione agregando el model y balance 
+	 * como string.
+	 * Respetar el principio de Responsabilidad Única 
+	 * 
+	 * La sobrecarga de constructores en Java se refiere a la capacidad 
+	 * de una clase para tener múltiples constructores con la misma firma 
+	 * (nombre de método), pero con diferentes listas de parámetros. 
+	 * Esto permite que los objetos de la clase sean inicializados de 
+	 * diferentes maneras, proporcionando flexibilidad al programador 
+	 * para crear instancias con diferentes conjuntos de datos iniciales.
+	 */
+	public Atm(String model, String balance) {
+		this(model , Double.parseDouble(balance));
+	}
+	
+	
+	/**
+	 *  factory method
+	 *  https://refactoring.guru/es/design-patterns
+	 *  Los patrones de diseño creacionales se utilizan para promover 
+	 *  el código limpio, modular y fácil de mantener, así como para 
+	 *  mejorar la flexibilidad y la reutilización del código.
+	 */
+	public static Atm createAirPortAtm() {
+		return new Atm("T-8888", 1_000_000);
 	}
 	
 	
