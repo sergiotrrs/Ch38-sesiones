@@ -28,6 +28,10 @@ public class AtmTest {
 		
 		Atm cajero05 = Atm.createAirPortAtm();
 		System.out.println( cajero05.showDetails()  );
+		System.out.println( cajero04.showDetails()  );
+		System.out.println( cajero03.showDetails()  );
+		System.out.println( cajero02.showDetails()  );
+		System.out.println( cajero01.showDetails()  );
 		
 		
 		}

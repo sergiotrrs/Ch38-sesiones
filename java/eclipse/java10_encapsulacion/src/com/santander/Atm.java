@@ -123,8 +123,17 @@ public class Atm {
 	
 	// Crear un método que me muestre el serialNumber, model, balance
 	public String showDetails() {
-		return null;
+		return String.format("Model %s, Serial Number %s , Balance $%,3.2f",
+				this.model, this.serialNumber, this.balance);
 	}
+	
+	/** Crear el método deposit() y withdraw()
+	 *  - No permitir depósitos de valores negativos.
+	 *  - No permitir retiros mayores al balance
+	 *  
+	 *  No realizar la operación y enviar un mensaje
+	 */
+	
 	
 	
 	
