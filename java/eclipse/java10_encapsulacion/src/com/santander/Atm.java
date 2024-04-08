@@ -121,6 +121,11 @@ public class Atm {
 		return this.serialNumber;
 	}
 	
+	// Crear un método que me muestre el serialNumber, model, balance
+	public String showDetails() {
+		return null;
+	}
+	
 	
 	
 

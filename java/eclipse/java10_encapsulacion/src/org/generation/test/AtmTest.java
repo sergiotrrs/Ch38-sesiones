@@ -27,6 +27,8 @@ public class AtmTest {
 		Atm cajero04 = new Atm("T-3500", "800000");		
 		
 		Atm cajero05 = Atm.createAirPortAtm();
+		System.out.println( cajero05.showDetails()  );
+		
 		
 		}
 
