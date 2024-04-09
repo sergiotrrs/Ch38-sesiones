@@ -4,7 +4,7 @@ package com.santander;
  *  Los pilares de OOP: encapsulación, herencia, polimorfismo, abstracción.
  *  
  *  Encapsulación: Principio de consiste en ocultar los detalles de como 
- *  funciona un obejto. Un aspecto importante de la encapsulación es el
+ *  funciona un objeto. Un aspecto importante de la encapsulación es el
  *  concepto de acceso controlado. Se puede establecer diferentes
  *  niveles de acceso para los atributos y métodos de un objeto.
  *  
@@ -135,7 +135,8 @@ public class Atm {
 	 */
 	public Double deposit(double amount) {
 	    if (amount <= 0) {
-	        System.out.println("No se pueden relizar depositos menores a 1");
+	        // System.out.println("No se pueden relizar depositos menores a 1");
+	    	throw new IllegalArgumentException("No se permiten depositos negativos");
 	    }else {
 	            this.balance += amount;
 	            System.out.println("El saldo nuevo es: " + this.balance);
@@ -144,8 +145,11 @@ public class Atm {
 	}
 
 	public Double withdraw(double amount) {
-	    if ( amount <= 0 || amount > this.balance ) {
-	        System.out.println("No se pueden realizar retiros menores a 0 ni mayores que el saldo disponible");
+	    if ( amount <= 0 || amount > this.balance ) {	        
+	    	// System.out.println("No se pueden realizar retiros menores a 0 ni mayores que el saldo disponible");
+	    	// Lanzar una excepción
+	    	throw new IllegalArgumentException("No se puede realizar retiros menores a 0 ni mayores que el saldo disponible");
+	    	
 	    } else{
 	        this.balance -= amount;
 	        System.out.println("El saldo nuevo es: " + this.balance);

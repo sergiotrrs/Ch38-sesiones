@@ -35,8 +35,9 @@ public class AtmTest {
 		
 		
 		System.out.println("Retiro de 50,000, queda: " + cajero01.withdraw(50000) );
-		System.out.println("Retiro de 1,000,000 , queda: " + cajero01.withdraw(1_000_000));
-		
+		//  java.lang.IllegalArgumentException: No se puede realizar retiros menores a 0 ni mayores que el saldo disponible
+		// System.out.println("Retiro de 1,000,000 , queda: " + cajero01.withdraw(1_000_000));
+		System.out.println("Depósito de -5000, queda : "+ cajero01.deposit(-5000));
 		
 		}
 
