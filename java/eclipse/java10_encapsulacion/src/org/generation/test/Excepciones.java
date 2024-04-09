@@ -1,5 +1,9 @@
 package org.generation.test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Excepciones {
 
 
@@ -45,11 +49,17 @@ public class Excepciones {
 	public static void main(String[] args) {
 		
 		System.out.println("Inicio de mi programa");
+		// declarar un array de 2 dimensiones con los valores [5, 6]
+		int[] numbers= {5,6};
 		
 		try {
 			divide();
-			char lastChar = lastChar("Hoy nos vamos a las 4:15 pm");
-			System.out.println( lastChar );
+			// char lastChar = lastChar("Hoy nos vamos a las 4:15 pm");
+			// System.out.println( lastChar );
+			// readFile();
+			numbers[5] = 20;
+			readFileWithException();
+			
 			
 		} catch(ArithmeticException e ) {
 			System.out.println("Excepción de aritmética");
@@ -58,6 +68,12 @@ public class Excepciones {
 			System.out.println("Fuera de rango en el string");
 			e.printStackTrace();
 			System.out.println( e.getMessage());
+		} catch(FileNotFoundException e) {
+			System.out.println("El archivo no se encuentra en la ruta");
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.err.println("Algo está mal");
+			e.printStackTrace();
 		}
 		
 		System.out.println("Fin de mi programa");
@@ -73,5 +89,25 @@ public class Excepciones {
 //		return word.charAt( word.length() -1 );
 		return word.charAt( 50 ); // StringIndexOutOfBoundsException
 	}
+	
+	static void readFile() {
+		File file = new File("myFile.txt");
+		
+		try {
+			Scanner sc = new Scanner( file );
+		} catch (FileNotFoundException e) {			
+			System.out.println("El archivo no existe");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	static void readFileWithException() throws FileNotFoundException {
+		File file = new File("myFile.txt");
+		Scanner sc = new Scanner( file );
+	}
+	
+	
+	
 
 }
