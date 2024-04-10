@@ -45,14 +45,14 @@ public abstract class Animal {
 	public abstract String eat();
 	
 	public abstract String makeANoise();
-
+	
 	// Getters and Setters
 	
-	public String getCommonName() {
+	public final String getCommonName() {
 		return commonName;
 	}
 
-	public void setCommonName(String commonName) {
+	public final void setCommonName(String commonName) {
 		this.commonName = commonName;
 	}
 

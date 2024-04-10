@@ -24,6 +24,16 @@ public class Cat extends Feline {
 		return "El gato " + this.name + " hace miauu";
 	}
 	
+
+	public String makeANoise(Cat streetCat) {
+		if( streetCat.getAge() > this.getAge() ) {
+			return "prrrrrr";
+		} else {
+			return "Raaaauuuullll";
+		}
+					
+	}
+	
 	
 
 }

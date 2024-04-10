@@ -16,7 +16,7 @@ public abstract class Feline extends Animal {
 	public Feline(double age) {
 		// Invoca al constructor de la superclase para inicializar
 		// parte de la funcionalidad que comparten ambas clases
-		super("Feline", "Felidae", 0); 
+		super("Feline", "Felidae", age); 
 	}
 	
 	/**
@@ -37,5 +37,7 @@ public abstract class Feline extends Animal {
 	public String makeANoise() {
 		return "grrrrrr";
 	}
+	
+	
 	
 }
