@@ -41,14 +41,21 @@ public class AnimalTest {
 			System.out.println( animal.sleep() );
 			
 			if(animal instanceof Cat) {
+				
 				System.out.println( ((Cat)animal).makeANoise(new Cat("Rocky", 5)) );
+				System.out.println( ((Cat)animal).trick() );
 			} else {
 				System.out.println( animal.makeANoise() );
 			}
-				
-			
+							
 		}
 		
+		
+	     Animal chicharron = new Cat("chicharron", 2);
+	     Feline satanas = new Cat("satanas",2);
+	     Cat garfield = new Cat("garfield", 2);
+	     Pet zeus = new Cat("zeus", 2);
+	     // Pet colmillitos = new Leopard(2);
 		
 
 	}

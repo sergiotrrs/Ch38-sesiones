@@ -1,6 +1,8 @@
 package com.zoo;
 
-public class Cat extends Feline {
+import java.io.Serializable;
+
+public class Cat extends Feline implements Pet, Serializable {
 	
 	private String name;
 	
@@ -33,7 +35,11 @@ public class Cat extends Feline {
 		}
 					
 	}
-	
+
+	@Override
+	public String trick() {		
+		return "Salto ninja";
+	}
 	
 
 }
