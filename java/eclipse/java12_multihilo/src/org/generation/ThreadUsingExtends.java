@@ -68,8 +68,8 @@ public class ThreadUsingExtends {
 		
 		try {
 			hilo01.join(); // espera hasta que el hilo termine su ejecución.
-			hilo02.join();
-			hilo03.join();
+			hilo02.join(); // Join() bloqueará el hilo en el que se ejecute
+			hilo03.join(); // hasta que este hilo complete su ejecución.
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
