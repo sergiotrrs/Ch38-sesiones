@@ -9,6 +9,7 @@ public class MathOperations {
 	}
 	
 	public double addition(double addend) {
+		if ( addend < 0 ) throw new IllegalStateException("Negative Number");
 		return this.value += addend;
 	}
 		
