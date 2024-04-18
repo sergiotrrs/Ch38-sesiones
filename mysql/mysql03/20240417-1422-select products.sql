@@ -64,6 +64,37 @@ SELECT id, name, price, category_id
 SELECT * from products ORDER BY category_id DESC;
 
 -- Modificar un registro UPDATE
-UPDATE products 
+/*UPDATE products 
 	SET price = 100 -- nuevo valor
     WHERE id = 4;
+*/
+
+SELECT * FROM products;
+
+-- Mostrar el valor de price como subtotoal y mostrar el total(price * IVA) 
+-- Ordenar por precio total de forma descendente.
+-- Limitar el números de elementos mostrados a 5
+SELECT 	id, 
+		name, 
+		stock, 
+        price AS subtotal, 
+        price * 1.16 AS total
+	FROM products
+    ORDER by total DESC, id DESC -- ordenar
+    LIMIT 5 OFFSET 2;  -- Limitar el número de elementos mostrados
+
+-- Mostrar el registro que tenga el mayor price, de cualquier categoría
+SELECT * FROM products 
+	WHERE price = ( SELECT MAX(price) FROM products );
+
+
+-- 
+SELECT * FROM products ORDER BY category_id;
+
+-- Qué categorias se están usando?
+SELECT DISTINCT category_id 
+	FROM products;
+
+
+
+

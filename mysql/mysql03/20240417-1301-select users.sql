@@ -28,4 +28,36 @@ SELECT COUNT( * )
     WHERE birth_date 
     BETWEEN "1999-04-17" AND  "2006-04-17";
 
+-- Patrones de búsqueda
+SELECT * FROM users;
+SELECT * FROM users WHERE email = "gmail.com"; -- no funciona la búsqueda
+SELECT * FROM users 
+	WHERE email LIKE "gmail.com"; -- no funciona
+-- Comidín _ : busqueda de cualquier caracter
+-- Comodín % : busqueda de cualquier número de caracteres
+SELECT * FROM users 
+	WHERE email LIKE "%gmail.com"; -- todos los caracteres a la izquierda
+    
+SELECT * FROM users 
+	WHERE email LIKE "_______@gmail.com"; -- que su user tenga 6 caracteres
+
+-- Busqueda de los usuarios que su email contenga "ped"
+SELECT * FROM users
+	WHERE email LIKE "%ped%";
+    
+-- Buscar los usuarios que email no tenga @
+SELECT * FROM users
+	WHERE email NOT LIKE "%@%";
+    
+-- Trabajando con fechas
+SELECT * FROM users;
+
+SELECT CURDATE(); -- Fecha actual
+SELECT NOW(); -- Fecha y hora;
+SELECT localtimestamp(); -- Fecha y hora
+
+-- Mostrar todos los usuarios que nacieron en abril
+SELECT id, name, birth_date
+	FROM users
+    WHERE MONTH(birth_date) = MONTH( CURDATE() + INTERVAL 1 MONTH );
 
