@@ -94,6 +94,15 @@ SELECT * FROM products ORDER BY category_id;
 -- Qué categorias se están usando?
 SELECT DISTINCT category_id 
 	FROM products;
+    
+-- Obtener el total de todos los precios de los productos
+SELECT * FROM products  ORDER by category_id;
+SELECT name, SUM(price) FROM products;
+-- Obtener el total de productos por categoria
+
+SELECT category_id , SUM(price) 
+	FROM products
+    GROUP BY category_id;
 
 
 

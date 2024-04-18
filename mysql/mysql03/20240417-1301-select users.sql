@@ -60,4 +60,28 @@ SELECT localtimestamp(); -- Fecha y hora
 SELECT id, name, birth_date
 	FROM users
     WHERE MONTH(birth_date) = MONTH( CURDATE() + INTERVAL 1 MONTH );
+    
+-- Tajeta de crédito
+-- Fecha de corte, se cortan los 30 días de compra.
+-- Fecha límite de pago, aprox 10 días para pagar las compras.
+-- Hoy es tu fecha de corte, tienes 10 días para pagar
+-- Cuál es tu día límite?
+
+SELECT CURDATE(), CURDATE() + INTERVAL 10 DAY AS "Fecha_limite";
+
+-- La edad de las personas de la tabla user
+SELECT id, name, birth_date from users;
+
+SELECT FLOOR(DATEDIFF( CURDATE(), "1995-05-15" ) / 365);
+SELECT FLOOR(DATEDIFF( CURDATE(), "1994-12-09" )/ 365);
+
+SELECT 	id, 
+		name, 
+        birth_date,
+        FLOOR(DATEDIFF( CURDATE(), birth_date )/ 365) AS age
+	FROM users
+    WHERE FLOOR(DATEDIFF( CURDATE(), birth_date )/ 365) > 25
+    ORDER BY age ASC;
+    
+
 
