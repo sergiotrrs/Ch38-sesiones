@@ -13,6 +13,9 @@ INSERT INTO roles( `name`, `description`)
 -- indicando name
 INSERT INTO roles( name ) 
 	    VALUES("warehouse");
+        
+INSERT INTO roles( name, description ) 
+	    VALUES("user tester", "Influencer");
 
 SELECT * FROM roles;
  -- DELETE FROM roles WHERE id = 100;
