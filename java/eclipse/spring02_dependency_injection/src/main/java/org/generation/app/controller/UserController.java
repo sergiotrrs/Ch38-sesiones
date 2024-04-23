@@ -27,9 +27,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1") // localhost:8080/api/v1 
 public class UserController {
 	
-	@Qualifier("generic")
-	@Autowired
+	/*
+	 * 1era forma de usar la inyección de dependencias
+	 * @Qualifier("generic")
+	 * @Autowired
+	 */
 	User user;
+	
+	/*
+	 *  2a forma de usar la inyección de dependencias
+	 */
+	UserController(@Qualifier("generic") User user){
+		this.user = user;
+	}
+	
 	
 	// Mapea solicitudes HTTP GET, en la subruta indicada
 	@GetMapping("greeting") // localhost:8080/greeting
