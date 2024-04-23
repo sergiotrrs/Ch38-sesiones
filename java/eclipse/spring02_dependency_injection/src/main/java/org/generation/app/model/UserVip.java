@@ -1,5 +1,6 @@
 package org.generation.app.model;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /*
@@ -20,8 +21,8 @@ import org.springframework.stereotype.Component;
  *  Bean: Es un objeto administrado por el contenedor de Spring.
  * 
  */
-
-// @Component
+@Qualifier("vip")
+@Component
 public class UserVip extends UserGeneric {
 	
 	public UserVip() {

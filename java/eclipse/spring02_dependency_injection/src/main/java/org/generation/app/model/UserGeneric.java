@@ -1,5 +1,6 @@
 package org.generation.app.model;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /*
@@ -21,7 +22,8 @@ import org.springframework.stereotype.Component;
  * 
  */
 
-// @Component
+@Qualifier("generic")
+@Component
 // @Entity
 public class UserGeneric implements User {
 	

@@ -1,6 +1,8 @@
 package org.generation.app.controller;
 
 import org.generation.app.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -25,7 +27,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1") // localhost:8080/api/v1 
 public class UserController {
 	
-	User user = new UserVip();
+	@Qualifier("generic")
+	@Autowired
+	User user;
 	
 	// Mapea solicitudes HTTP GET, en la subruta indicada
 	@GetMapping("greeting") // localhost:8080/greeting
