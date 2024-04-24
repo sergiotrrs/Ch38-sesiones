@@ -23,12 +23,13 @@ public class Spring03AccessingDataJpaApplication {
 	  CommandLineRunner demo(CustomerRepository repository) {
 	    return (args) -> {
 	      // save a few customers
+	    	/*
 	      repository.save(new Customer("Jack", "Bauer"));
 	      repository.save(new Customer("Chloe", "O'Brian"));
 	      repository.save(new Customer("Kim", "Bauer"));
 	      repository.save(new Customer("David", "Palmer"));
 	      repository.save(new Customer("Michelle", "Dessler"));
-
+*/
 	      // fetch all customers
 	      log.info("Customers found with findAll():");
 	      log.info("-------------------------------");
@@ -45,9 +46,9 @@ public class Spring03AccessingDataJpaApplication {
 	      log.info("");
 
 	      // fetch customers by last name
-	      log.info("Customer found with findByLastName('Bauer'):");
+	      log.info("Customer found with findByLastName('Estrella'):");
 	      log.info("--------------------------------------------");
-	      repository.findByLastName("Bauer").forEach(bauer -> {
+	      repository.findByLastName("Estrella").forEach(bauer -> {
 	        log.info(bauer.toString());
 	      });
 	      log.info("");
