@@ -9,7 +9,11 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "name", nullable = false, length = 100)
 	private String name;
+	
+	@Column(name = "description", nullable = true, length = 150)
 	private String description;
 	
 	public Role() {		
