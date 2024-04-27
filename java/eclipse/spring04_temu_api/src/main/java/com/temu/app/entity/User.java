@@ -32,9 +32,23 @@ public class User {
 	 * Relaciones entre Entidades: JPA permite definir relaciones 
 	 * entre entidades, como relaciones uno a uno, uno a muchos 
 	 * y muchos a muchos. Estas relaciones se pueden configurar
-	 *  usando anotaciones como @OneToOne, @OneToMany, @ManyToOne y @ManyToMany. 
+	 *  usando anotaciones como @OneToOne, @OneToMany, @ManyToOne 
+	 *  y @ManyToMany.
+	 *  
+	 * "optional = false" se establece en false, significa 
+	 * que cada instancia de la entidad que contiene la relación 
+	 * debe tener un valor asociado para esa relación. En el 
+	 * contexto de la entidad de usuario, esto significa que 
+	 * cada usuario debe tener un rol asociado, y no se permitirá 
+	 * que la relación sea nula desde el punto de vista del objeto.
+	 * 
+	 * "nullable = false" establece el campo role_id en la tabla 
+	 * users como Not Null, lo que garantiza que cada 
+	 * usuario tenga un rol asociado en la base de datos.
+	 *   
 	 */
-	@ManyToOne
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "role_id", nullable = false)
 	private Role role;
 	
 	public User() {
