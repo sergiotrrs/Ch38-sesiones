@@ -44,14 +44,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllInactiveUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<User>) userRepository.findAllByActiveFalse();
 	}
 	
 	@Override
-	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> getAllUsers(boolean isActive) {
+		if( isActive ) return getAllActiveUsers();
+		else return getAllInactiveUsers();		
 	}
 
 	@Override

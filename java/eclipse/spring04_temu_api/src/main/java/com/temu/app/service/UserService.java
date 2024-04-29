@@ -11,7 +11,7 @@ public interface UserService {
 	User createUser(User user);
 	List<User> getAllActiveUsers();
 	List<User> getAllInactiveUsers();
-	List<User> getAllUsers();
+	List<User> getAllUsers(boolean isActive);
 	User updateUser(User user, Long id);
 	void deleteUser(Long id);
 	
