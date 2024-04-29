@@ -1,6 +1,7 @@
 package com.temu.app.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -20,9 +21,16 @@ public class UserServiceImpl implements UserService {
 	
 	
 	@Override
-	public User getUserById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserById(Long id) {		
+		Optional<User> userOptional = userRepository.findById(id);
+		User existingUser;
+		
+		if( userOptional.isPresent() ) {
+			existingUser = userOptional.get();
+			return existingUser;
+		} else {
+			throw new IllegalStateException("User does not exist with id " + id);
+		}			
 	}
 
 	@Override

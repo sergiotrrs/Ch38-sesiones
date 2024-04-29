@@ -2,6 +2,8 @@ package com.temu.app.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.temu.app.entity.User;
@@ -33,16 +35,31 @@ public class UserController {
 	 *  localhost:8080/api/v1/users
 	 *  
 	 *  localhost:8080/api/v1/users?active=false  Todos los usuarios inactivo
+	 *  
+	 *  Class ResponseEntity<> : Es una clase que representa la respuesta HTTP:
+	 *  código estado, encabezado, cuerpo de la respuesta.
+	 *  Proporciona una forma más flexible y completa de manejar las respuestas HTTP. 
+	 *  
 	 */
 	@GetMapping 
-	List<User> getAllUsers(
+	 ResponseEntity< List<User> > getAllUsers(
 			@RequestParam(	name="active", 
 							required=false, 
 							defaultValue="true") boolean active 
 			){
-		return userService.getAllUsers( active );
+		return new ResponseEntity<List<User>>(userService.getAllUsers( active ), HttpStatus.OK);
 	}
 	
+	/**
+	 *  @GetMapping con Path Variable
+	 *  Path Variable vincula un valor de una variable URL
+	 *  a un parámetro del método.
+	 *  Permite capturar datos dinámicos presentes en la URL 
+	 */
+	@GetMapping("{id}") // localhost:8080/api/v1/users/{id}
+	ResponseEntity<User> getUserById(@PathVariable("id") Long id ){
+		return new ResponseEntity<User>(userService.getUserById(id) ,HttpStatus.OK );
+	}
 	
 
 }
