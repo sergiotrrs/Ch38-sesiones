@@ -40,9 +40,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User createUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public User createUser(User user) {		
+		return userRepository.save(user);
 	}
 
 	@Override
