@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.temu.app.entity.Role;
 import com.temu.app.entity.User;
 import com.temu.app.repository.UserRepository;
 import com.temu.app.service.UserService;
@@ -72,13 +71,17 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User updateUser(User user, Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		User existingUser = getUserById(id);
+		existingUser.setFirstName( user.getFirstName() );
+		existingUser.setLastName( user.getLastName() );
+		existingUser.setPassword( user.getPassword() );
+		existingUser.setTelephone( user.getTelephone() );
+		existingUser.setBirthDate( user.getBirthDate() );
+		return userRepository.save(existingUser);
 	}
 
 	@Override
-	public void deleteUser(Long id) {
-		
+	public void deleteUser(Long id) {		
 		User existingUser = getUserById(id);		
 		existingUser.setActive(false);
 		
