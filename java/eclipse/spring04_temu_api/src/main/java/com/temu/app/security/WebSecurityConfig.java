@@ -96,6 +96,10 @@ public class WebSecurityConfig {
 								).hasAnyRole("ADMIN","CUSTOMER")
 						.anyRequest().authenticated()						
 						)
+				// STEP 7: Agregamos el filtro de autenticación del login
+				// interceptar las solicitudes de autenticación 
+				// y generamos el token en la respuesta
+				.addFilter(null)
 				.csrf( csrf-> csrf.disable() )
 				.httpBasic( withDefaults() ) 
 				.build();
