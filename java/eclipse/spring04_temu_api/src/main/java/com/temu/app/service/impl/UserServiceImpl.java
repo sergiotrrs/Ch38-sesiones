@@ -3,6 +3,7 @@ package com.temu.app.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.temu.app.entity.User;
@@ -14,9 +15,13 @@ public class UserServiceImpl implements UserService {
 
 	
 	UserRepository userRepository;
+	PasswordEncoder passwordEncoder;
 	
-	public UserServiceImpl(UserRepository userRepository) {
+	public UserServiceImpl(
+			UserRepository userRepository, 
+			PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 	
 	
@@ -51,7 +56,7 @@ public class UserServiceImpl implements UserService {
 		user.setActive(true);
 		user.setId(null);
 		// user.setRole( new Role(1) );
-		// TODO encriptar password
+		user.setPassword( passwordEncoder.encode( user.getPassword() ) );
 		
 		if( userRepository.existsByEmail(user.getEmail()) ) {
 			throw new IllegalStateException("User exist with email " + user.getEmail());

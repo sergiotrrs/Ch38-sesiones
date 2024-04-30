@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.temu.app.entity.User;
 
+//STEP 5 Convertir un tipo User a UserDetails
 public class UserDetailsImp implements UserDetails {
 
 	private User user;
