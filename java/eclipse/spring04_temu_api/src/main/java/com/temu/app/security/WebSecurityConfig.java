@@ -3,6 +3,8 @@ package com.temu.app.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -29,7 +31,7 @@ public class WebSecurityConfig {
 
 	
 	// STEP 1 Autenticación basada en usuarios en memoria
-	@Bean
+/*	@Bean
 	UserDetailsService userDetailsService( PasswordEncoder passwordEncoder ) {
 		UserDetails sergio = User.builder()
 								.username("sergio")
@@ -48,7 +50,7 @@ public class WebSecurityConfig {
 								.build();
 		
 		return new InMemoryUserDetailsManager(sergio, tania, kristian);
-	}
+	} */
 	
 	// STEP 1.1 Crear un bean de PassworsEncoder
 	/**
@@ -101,5 +103,31 @@ public class WebSecurityConfig {
 	}
 	
 	
+	// STEP 3 Autenticación basada en usuarios de la DB
+	/** 
+	 *  AuthenticationManager: Gestiona las operaciones de autenticación.
+	 *  getSharedObject: Obtiene una instancia compartida de AuthenticationManagerBuilder 
+	 *  .userDetailsService: Configura el AuthenticationManagerBuilder 
+	 *  	para utilizar un servicio de detalles de usuario personalizado.
+	 *  userDetailsService: responsable de cargar detalles específicos 
+	 *  	del usuario durante el proceso de autenticación.
+	 */	
+	@Bean
+	AuthenticationManager authManager(
+				HttpSecurity httpSecurity,
+				PasswordEncoder passwordEncoder,
+				UserDetailsService userDetailsService
+			
+			) throws Exception {
+		
+		AuthenticationManagerBuilder authManagerBuilder = httpSecurity
+				.getSharedObject( AuthenticationManagerBuilder.class  );
+		
+		authManagerBuilder
+		 .userDetailsService( userDetailsService ) 
+		 .passwordEncoder( passwordEncoder );
+		
+		return authManagerBuilder.build();
+	}
 	
 }
